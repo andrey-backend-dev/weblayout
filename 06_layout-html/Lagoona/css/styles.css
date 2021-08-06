@@ -147,7 +147,7 @@ p {
     height: 258px;
     border-radius: 15px;
     margin-right: 23px;
-
+    color: #FFF;
 }
 .specials-item:nth-child(odd) {
   margin-bottom: 23px;
@@ -169,19 +169,8 @@ p {
     background-image: url('../img/Rectangle\ 14\ \(1\).jpg');
 }
 .specials-item.luxury {
-    padding-left: 40px;
-    background-image: url('../img/33\ 1-luxury.jpg');
-}
-.specials-card-heading {
-    display: inline-block;
-    width: 299px;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-family: 'MullerBold';
-    line-height: 40px;
-    font-size: 40px;
-    color: #FFF;
-
+  padding-left: 40px;
+  background-image: url('../img/33\ 1-luxury.jpg');
 }
 .specials-card-price {
     margin-bottom: 47px;
@@ -199,6 +188,14 @@ p {
 }
 .specials-item.luxury {
     padding-top: 211px;
+}
+.specials-card-heading {
+  font-family: 'MullerBold';
+  font-size: 40px;
+  line-height: 40px;
+  max-width: 299px;
+  margin-bottom: 15px;
+  margin-top: 0;
 }
 .specials-item.luxury .specials-card-heading {
     font-size: 60px;
