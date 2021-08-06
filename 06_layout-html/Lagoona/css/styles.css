@@ -1,25 +1,25 @@
 @font-face {
     font-family: 'MullerBold';
-    src: url('/fonts/MullerBold.woff2');
-    src: url('/fonts/MullerBold.woff');
+    src: url('../fonts/MullerBold.woff2');
+    src: url('../fonts/MullerBold.woff');
 }
 
 @font-face {
     font-family: 'Light';
-    src: url('/fonts/MullerLight.woff2');
-    src: url('/fonts/MullerLight.woff');
+    src: url('../fonts/MullerLight.woff2');
+    src: url('../fonts/MullerLight.woff');
 }
 
 @font-face {
     font-family: 'MullerMedium';
-    src: url('/fonts/MullerMedium.woff2');
-    src: url('/fonts/MullerMedium.woff');
+    src: url('../fonts/MullerMedium.woff2');
+    src: url('../fonts/MullerMedium.woff');
 }
 
 @font-face {
     font-family: 'MullerRegular';
-    src: url('/fonts/MullerRegular.woff2');
-    src: url('/fonts/MullerRegular.woff');
+    src: url('../fonts/MullerRegular.woff2');
+    src: url('../fonts/MullerRegular.woff');
 }
 
 
@@ -71,12 +71,12 @@ p {
 
 .header-personal-cabinet {
     padding-left: 28px;
-    background: transparent url('/img/Vector-arrow-right.svg') no-repeat center left;
+    background: transparent url('../img/Vector-arrow-right.svg') no-repeat center left;
     color: #CC9933;
     font-size: 16px;
     line-height: 16px;
 }
-.header-nav-menu {  
+.header-nav-menu {
     display: flex;
     flex: 1 1 auto;
     height: 70px;
@@ -137,39 +137,40 @@ p {
 }
 .specials-list {
     display:flex;
-    vertical-align: top;
+    flex-direction: column;
+    height: 540px;
+    flex-wrap: wrap;
 }
 .specials-item {
     display: inline-block;
-    vertical-align: top;
     width: 573px;
     height: 258px;
     border-radius: 15px;
     margin-right: 23px;
-    margin-bottom: 23px
+
+}
+.specials-item:nth-child(odd) {
+  margin-bottom: 23px;
+}
+.specials-item:last-child {
+  margin: 0;
+  height: 540px;
 }
 .darken-block {
-    padding-left: 40px;
-    padding-top: 40px;
-    background: transparent url('/img/DARKEN.png') no-repeat;
-}
-.united-images {
-    display: inline-block;
-    width: 573px;
-    height: 540px;
-    margin-right: 23px;
+  height: inherit;
+  padding-top: 40px;
+  padding-left: 40px;
+  background-image: url('../img/DARKEN.png')
 }
 .specials-item.maldives {
-    background-image: url('/img/Rectangle\ 14.jpg')
+    background-image: url('../img/Rectangle\ 14.jpg')
 }
 .specials-item.krit {
-    background-image: url('/img/Rectangle\ 14\ \(1\).jpg');
+    background-image: url('../img/Rectangle\ 14\ \(1\).jpg');
 }
 .specials-item.luxury {
-    height: 540px;
     padding-left: 40px;
-    margin: 0;
-    background-image: url('/img/33\ 1-luxury.jpg');
+    background-image: url('../img/33\ 1-luxury.jpg');
 }
 .specials-card-heading {
     display: inline-block;
@@ -191,7 +192,7 @@ p {
 }
 .specials-card-more {
     padding-right: 15px;
-    background: transparent url('/img/arrow.svg') center right no-repeat;
+    background: transparent url('../img/arrow.svg') center right no-repeat;
     line-height: 16px;
     font-size: 16px;
     color: #FFCC66;
@@ -207,6 +208,7 @@ p {
     line-height: 30px;
     font-size: 30px;
 }
+
 .about-us-text {
     display: block;
     max-width: 888px;
@@ -229,19 +231,19 @@ p {
 }
 
 .services-item.exclusive {
-    background-image: url('/img/10.png')
+    background-image: url('../img/10.png')
 }
 
 .services-item.rent {
-    background-image: url('/img/15.png')
+    background-image: url('../img/15.png')
 }
 
 .services-item.health{
-    background-image: url('/img/12.png')
+    background-image: url('../img/12.png')
 }
 
 .services-item.security{
-    background-image: url('/img/carlo-d-agnolo-aFxSh_l4fbY-unsplash.png')
+    background-image: url('../img/carlo-d-agnolo-aFxSh_l4fbY-unsplash.png')
 }
 
 .services-item:not(:nth-child(2n)) {
@@ -277,35 +279,35 @@ p {
 }
 
 .benefits-item.bathtub {
-    background-image: url('/img/bathtub.png')
+    background-image: url('../img/bathtub.png')
 }
 
 .benefits-item.towel {
-    background-image: url('/img/hanger-towel.png')
+    background-image: url('../img/hanger-towel.png')
 }
 
 .benefits-item.heating {
-    background-image: url('/img/heating.png')
+    background-image: url('../img/heating.png')
 }
 
 .benefits-item.parking {
-    background-image: url('/img/parking.png')
+    background-image: url('../img/parking.png')
 }
 
 .benefits-item.reception {
-    background-image: url('/img/reception.png')
+    background-image: url('../img/reception.png')
 }
 
 .benefits-item.pool {
-    background-image: url('/img/swimming-pool.png')
+    background-image: url('../img/swimming-pool.png')
 }
 
 .benefits-item.safe {
-    background-image: url('/img/security-box.png')
+    background-image: url('../img/security-box.png')
 }
 
 .benefits-item.key {
-    background-image: url('/img/hotel-key.png')
+    background-image: url('../img/hotel-key.png')
 }
 
 .benefits-card-text {
@@ -324,7 +326,7 @@ p {
     background-color: #FFF;
 }
 .placement-item.more {
-    background-image: url('/img/41-more-offers.jpg');
+    background-image: url('../img/41-more-offers.jpg');
     padding-top: 373px;
     padding-left: 9px;
 }
@@ -380,7 +382,7 @@ p {
     line-height: 40px;
     font-size: 20px;
     color: #FFF;
-    background: transparent url('/img/Rectangle\ 2-white-arrow.svg') center right no-repeat;
+    background: transparent url('../img/Rectangle\ 2-white-arrow.svg') center right no-repeat;
 }
 .placement-card-link-btn {
     padding: 13px 20px;
