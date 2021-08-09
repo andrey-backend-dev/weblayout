@@ -28,12 +28,17 @@
     font-family: 'MullerRegular', sans-serif;
 }
 
+section, header {
+    margin-bottom: 70px;
+}
+
 body {
     background-color: #E5E5E5;
 }
 
 a {
     text-decoration: none;
+    color:#CC9933;
 }
 
 ul {
@@ -83,7 +88,6 @@ p {
     background-color: #FFF;
     border-radius: 15px;
     padding-left: 22.5px;
-    margin-bottom: 70px;
 }
 .header-nav-list {
     display: flex;
@@ -114,27 +118,30 @@ p {
     font-size: 16px;
     line-height: 16px;
 }
-.header-btn-item {
+.btn {
+    display:inline-block;
     border: 1px solid #CC9933;
     border-radius: 10px;
-    height: 42px;
+    color: #CC9933;
     padding: 13px 20px;
 }
-
+.form-button {
+    padding: 13px 30px;
+    background-color: #FFF;
+}
 .header-btn-item:not(:last-child) {
     margin-right: 40px;
 }
-
-.header-btn-link {
-    color: #CC9933;
-}
 .chapter-heading {
+    margin-top: 0;
+    margin-bottom: 30px;
     margin-left: 40px;
     font-size: 40px;
     font-weight: normal;
     line-height: 40px;
     color: #333;
 }
+
 .specials-list {
     display:flex;
     flex-direction: column;
@@ -163,14 +170,14 @@ p {
   background-image: url('../img/DARKEN.png')
 }
 .specials-item.maldives {
-    background-image: url('../img/Rectangle\ 14.jpg')
+    background: transparent url('../img/Rectangle\ 14.jpg') no-repeat;
 }
 .specials-item.krit {
-    background-image: url('../img/Rectangle\ 14\ \(1\).jpg');
+    background: transparent url('../img/Rectangle\ 14\ \(1\).jpg') no-repeat;
 }
 .specials-item.luxury {
   padding-left: 40px;
-  background-image: url('../img/33\ 1-luxury.jpg');
+  background: transparent url('../img/33\ 1-luxury.jpg') no-repeat;
 }
 .specials-card-price {
     margin-bottom: 47px;
@@ -218,7 +225,7 @@ p {
 }
 .services-item {
     flex-basis: 573px;
-    height: 330px;
+    min-height: 330px;
     margin-bottom: 23px;
     padding-top: 191px;
     padding-left: 45px;
@@ -246,6 +253,9 @@ p {
 .services-item:not(:nth-child(2n)) {
     margin-right: 23px;
 }
+.services-item:nth-last-child(-n+2) {
+    margin-bottom: 0;
+}
 .services-card-link {
     display: inline-block;
     padding-right: 16px;
@@ -253,7 +263,9 @@ p {
     color: #CC9933;
 }
 .services-card-text {
+    line-height: 32px;
     max-width: 402px;
+    margin-bottom: 50px;
 }
 .benefits-list {
     display: flex;
@@ -381,9 +393,179 @@ p {
     color: #FFF;
     background: transparent url('../img/Rectangle\ 2-white-arrow.svg') center right no-repeat;
 }
-.placement-card-link-btn {
-    padding: 13px 20px;
-    border: 1px solid #CC9933;
+.form {
+    width: 1170px;
+    min-height: 274px;
+    padding: 38px 45px 71px 40px;
+    border-radius: 15px;
+    background-color: #E9E9E9;
+}
+
+.chapter-heading.tour {
+    margin-left: 0;
+}
+.main-form {
+    margin-left: 5px;
+    border-radius: 15px;
+    background-color: #FFF;
+}
+.form-list{
+    display:flex;
+    align-items: center;
+    padding: 31px 28px;
+}
+.form-item:not(:last-child) {
+    padding-right: 20px;
+    border-right: 1px solid #E1E1E1;
+}
+.form-item:not(:nth-child(1)) {
+    padding-left: 20px;
+}
+
+.label {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 12px;
+    line-height: 12px;
+}
+.input {
+    border: 0;
+    line-height: 16px;    
+}
+.nights, .tourists {
+    width: 101px;
+}
+
+.import-date {
+    width: 141px;
+}
+
+.country, .city {
+    width: 169px;
+}
+
+.lagoona-image {
     border-radius: 10px;
-    color: #CC9933;
+}
+
+.contacts-block {
+    display: flex;
+    min-height: 618px;
+    padding: 44px 44px 46px 46px;
+    border-radius: 15px;
+    background-color: #FFF;
+}
+
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    margin-right: 50px;
+}
+.contacts-item-heading {
+    margin: 0;
+    font-size: 20px;
+}
+
+.contacts-item:not(:last-child) {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #C4C4C4;
+}
+.contacts-item:not(:nth-child(1)) {
+    padding-top: 25px;
+}
+.contacts-info {
+    display: inline-block;
+    margin-bottom: 23px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.contacts-item-heading.address {
+    margin-right: 83px;
+}
+
+.phones {
+    margin-right: 47px;
+}
+
+.emails {
+    margin-right: 84px;
+}
+
+.graphic {
+    margin-right: 74px;
+}
+
+.contacts-item:last-child {
+    padding-top: 45px;
+}
+
+.contacts-btn {
+    padding: 27px 29px;
+    background-color: #FFF;
+}
+
+.contacts-mail-description {
+    color: #999;
+}
+
+address.contacts-info {
+    font-style: normal;
+}
+
+section:last-child{
+    margin-bottom: 19px;
+}
+.paragraphs-list {
+    display:flex;
+    height:341px;
+    padding: 44px 336px 46px 52px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis:320px;
+    border-radius: 15px;
+    background: #333 url('../img/Frame\ 11-lagoona-logo.svg') no-repeat 737.62px 113px;
+    color: #FFF;
+    line-height: 24px;
+    font-size: 16px;
+}
+.company, .offer {
+    line-height: 30.4px;
+    width: 320px;
+}
+.company {
+    margin-bottom: 38px;
+    margin-right: 102px;
+}
+.offer {
+    margin-bottom: 39px;
+}
+.footer {
+    margin-bottom: 20px;
+}
+.footer-info {
+    font-style: normal;
+}
+address.footer-info {
+    padding-top: 7px;
+    margin-bottom: 14px;
+    line-height: 16px;
+}
+.footer-p.phone {
+    margin-bottom: 15px;
+}
+footer .container {
+    position: relative;
+}
+.social-list {
+    position: absolute;
+    display: flex;
+    right: 66px;
+    top: 51px;
+    flex-direction: column;
+}
+.social-logo:not(:last-child) {
+    margin-bottom: 15px;
 }
