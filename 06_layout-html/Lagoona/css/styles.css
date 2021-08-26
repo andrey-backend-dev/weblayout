@@ -1,33 +1,40 @@
 @font-face {
-    font-family: 'MullerBold';
+    font-family: 'Muller';
     src: url('../fonts/MullerBold.woff2');
     src: url('../fonts/MullerBold.woff');
+    font-weight: bold;
 }
 
 @font-face {
-    font-family: 'Light';
+    font-family: 'Muller';
     src: url('../fonts/MullerLight.woff2');
     src: url('../fonts/MullerLight.woff');
+    font-weight: 300;
 }
 
 @font-face {
-    font-family: 'MullerMedium';
+    font-family: 'Muller';
     src: url('../fonts/MullerMedium.woff2');
     src: url('../fonts/MullerMedium.woff');
+    font-weight: 500;
 }
 
 @font-face {
-    font-family: 'MullerRegular';
+    font-family: 'Muller';
     src: url('../fonts/MullerRegular.woff2');
     src: url('../fonts/MullerRegular.woff');
+    font-weight: normal;
 }
 
 
 * {
     box-sizing: border-box;
-    font-family: 'MullerRegular', sans-serif;
+    font-family: 'Muller', sans-serif;
 }
 
+:root {
+    --main-color: #CC9933;
+}
 section, header {
     margin-bottom: 70px;
 }
@@ -38,7 +45,19 @@ body {
 
 a {
     text-decoration: none;
-    color:#CC9933;
+    color: var(--main-color);
+    transition-property: background-image, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+a:hover {
+    cursor: pointer;
+    color: rgb(153, 130, 255);
+}
+
+.with-arrow:hover {
+    background-image: url('../img/arrow-hover.svg')
 }
 
 ul {
@@ -64,7 +83,7 @@ p {
 
 .header-contact-phone {
     margin-right: auto;
-    font-family: 'MullerMedium', sans-serif;
+    font-weight: 500;
     color: #666666;
     line-height: 20px;
     font-size: 20px;
@@ -77,9 +96,12 @@ p {
 .header-personal-cabinet {
     padding-left: 28px;
     background: transparent url('../img/Vector-arrow-right.svg') no-repeat center left;
-    color: #CC9933;
+    color: var(--main-color);
     font-size: 16px;
     line-height: 16px;
+}
+.header-personal-cabinet:hover {
+    background-image: url('../img/Vector-arrow-right-hover.svg')
 }
 .header-nav-menu {
     display: flex;
@@ -118,12 +140,31 @@ p {
     font-size: 16px;
     line-height: 16px;
 }
+
 .btn {
     display:inline-block;
-    border: 1px solid #CC9933;
+    border: 1px solid var(--main-color);
     border-radius: 10px;
-    color: #CC9933;
+    color: var(--main-color);
     padding: 13px 20px;
+    transition-property: transform, background-color, color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transform: scale(107.5%);
+    background-color: var(--main-color);
+    color: #FFF;
+}
+
+.btn:active {
+    transform: scale(100%);
+}
+
+.placement-card-link-btn {
+    margin-bottom: 41px;
 }
 .form-button {
     padding: 13px 30px;
@@ -150,8 +191,11 @@ p {
 }
 .specials-item {
     display: inline-block;
+    position: relative;
     width: 573px;
     height: 258px;
+    padding-left: 40px;
+    padding-top: 40px;
     border-radius: 15px;
     margin-right: 23px;
     color: #FFF;
@@ -163,11 +207,16 @@ p {
   margin: 0;
   height: 540px;
 }
-.darken-block {
-  height: inherit;
-  padding-top: 40px;
-  padding-left: 40px;
-  background-image: url('../img/DARKEN.png')
+.specials-item.maldives::before,
+.specials-item.krit::before {
+    display: block;
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    content: '';
+    width: inherit;
+    height: inherit;
+    background-image: url('../img/DARKEN.png');
 }
 .specials-item.maldives {
     background: transparent url('../img/Rectangle\ 14.jpg') no-repeat;
@@ -176,7 +225,6 @@ p {
     background: transparent url('../img/Rectangle\ 14\ \(1\).jpg') no-repeat;
 }
 .specials-item.luxury {
-  padding-left: 40px;
   background: transparent url('../img/33\ 1-luxury.jpg') no-repeat;
 }
 .specials-card-price {
@@ -187,6 +235,7 @@ p {
     opacity: 80%;
 }
 .specials-card-more {
+    position: relative;
     padding-right: 15px;
     background: transparent url('../img/arrow.svg') center right no-repeat;
     line-height: 16px;
@@ -197,7 +246,8 @@ p {
     padding-top: 211px;
 }
 .specials-card-heading {
-  font-family: 'MullerBold';
+    position: relative;
+  font-weight: bold;
   font-size: 40px;
   line-height: 40px;
   max-width: 299px;
@@ -259,7 +309,7 @@ p {
 .services-card-link {
     display: inline-block;
     padding-right: 16px;
-    background: transparent url(/img/arrow.svg) no-repeat center right;
+    background: transparent url('../img/arrow.svg') no-repeat center right;
     color: #CC9933;
 }
 .services-card-text {
@@ -272,7 +322,7 @@ p {
     flex-wrap: wrap;
 }
 .benefits-item {
-    height: 275px;
+    min-height: 275px;
     width: 275px;
     padding: 116px 42px 41px 45px;
     flex-shrink: 0;
@@ -287,36 +337,48 @@ p {
     margin-right: 23px;
 }
 
-.benefits-item.bathtub {
+.bathtub {
     background-image: url('../img/bathtub.png')
 }
 
-.benefits-item.towel {
+.towel {
     background-image: url('../img/hanger-towel.png')
 }
 
-.benefits-item.heating {
+.heating {
     background-image: url('../img/heating.png')
 }
 
-.benefits-item.parking {
+.parking {
     background-image: url('../img/parking.png')
 }
 
-.benefits-item.reception {
+.reception {
     background-image: url('../img/reception.png')
 }
 
-.benefits-item.pool {
+.pool {
     background-image: url('../img/swimming-pool.png')
 }
 
-.benefits-item.safe {
+.safe {
     background-image: url('../img/security-box.png')
 }
 
-.benefits-item.key {
+.key {
     background-image: url('../img/hotel-key.png')
+}
+
+.test1 {
+    background-image: url('../img/bathtub.png')
+}
+
+.test2 {
+    background-image: url('../img/hanger-towel.png')
+}
+
+.benefits-item:last-child {
+    margin: 0;
 }
 
 .benefits-card-text {
@@ -329,16 +391,19 @@ p {
 }
 .placement-item {
     width: 374px;
-    height: 440px;
+    min-height: 440px;
     margin-bottom: 23px;
     border-radius: 15px;
     background-color: #FFF;
 }
 .placement-item.more {
-    background-image: url('../img/41-more-offers.jpg');
-    padding-top: 373px;
+    position: relative;
     padding-left: 9px;
+    padding-top: 373px;
+    margin-right: 0;
+    background: #FFF url('../img/41-more-offers.jpg') no-repeat center/cover;
 }
+
 .placement-item:not(:nth-child(3n)) {
     margin-right: 23px;
 }
@@ -360,7 +425,7 @@ p {
     line-height: 16px;
 }
 .placement-card-price .price {
-    font-family: 'MullerBold', sans-serif;
+    font-weight: bold;
     font-size: 20px;
     line-height: 20px;
 }
@@ -387,11 +452,19 @@ p {
 .placement-card-link.more {
     display: inline-block;
     padding-right: 15px;
-    font-family: 'MullerMedium';
+    font-weight: 500;
     line-height: 40px;
     font-size: 20px;
     color: #FFF;
     background: transparent url('../img/Rectangle\ 2-white-arrow.svg') center right no-repeat;
+}
+.placement-card-link.more::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 .form {
     width: 1170px;
@@ -430,7 +503,7 @@ p {
 }
 .input {
     border: 0;
-    line-height: 16px;    
+    line-height: 16px;
 }
 .nights, .tourists {
     width: 101px;
