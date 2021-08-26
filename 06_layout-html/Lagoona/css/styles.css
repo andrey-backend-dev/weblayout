@@ -1,31 +1,35 @@
 @font-face {
-    font-family: 'MullerBold';
+    font-family: 'Muller';
     src: url('../fonts/MullerBold.woff2');
     src: url('../fonts/MullerBold.woff');
+    font-weight: bold;
 }
 
 @font-face {
-    font-family: 'Light';
+    font-family: 'Muller';
     src: url('../fonts/MullerLight.woff2');
     src: url('../fonts/MullerLight.woff');
+    font-weight: 300;
 }
 
 @font-face {
-    font-family: 'MullerMedium';
+    font-family: 'Muller';
     src: url('../fonts/MullerMedium.woff2');
     src: url('../fonts/MullerMedium.woff');
+    font-weight: 500;
 }
 
 @font-face {
-    font-family: 'MullerRegular';
+    font-family: 'Muller';
     src: url('../fonts/MullerRegular.woff2');
     src: url('../fonts/MullerRegular.woff');
+    font-weight: normal;
 }
 
 
 * {
     box-sizing: border-box;
-    font-family: 'MullerRegular', sans-serif;
+    font-family: 'Muller', sans-serif;
 }
 
 :root {
@@ -41,7 +45,7 @@ body {
 
 a {
     text-decoration: none;
-    color:#CC9933;
+    color: var(--main-color);
     transition-property: background-image, color;
     transition-duration: 0.3s;
     transition-timing-function: ease;
@@ -79,7 +83,7 @@ p {
 
 .header-contact-phone {
     margin-right: auto;
-    font-family: 'MullerMedium', sans-serif;
+    font-weight: 500;
     color: #666666;
     line-height: 20px;
     font-size: 20px;
@@ -243,7 +247,7 @@ p {
 }
 .specials-card-heading {
     position: relative;
-  font-family: 'MullerBold';
+  font-weight: bold;
   font-size: 40px;
   line-height: 40px;
   max-width: 299px;
@@ -305,7 +309,7 @@ p {
 .services-card-link {
     display: inline-block;
     padding-right: 16px;
-    background: transparent url(/img/arrow.svg) no-repeat center right;
+    background: transparent url('../img/arrow.svg') no-repeat center right;
     color: #CC9933;
 }
 .services-card-text {
@@ -421,7 +425,7 @@ p {
     line-height: 16px;
 }
 .placement-card-price .price {
-    font-family: 'MullerBold', sans-serif;
+    font-weight: bold;
     font-size: 20px;
     line-height: 20px;
 }
@@ -448,7 +452,7 @@ p {
 .placement-card-link.more {
     display: inline-block;
     padding-right: 15px;
-    font-family: 'MullerMedium';
+    font-weight: 500;
     line-height: 40px;
     font-size: 20px;
     color: #FFF;
@@ -499,7 +503,7 @@ p {
 }
 .input {
     border: 0;
-    line-height: 16px;    
+    line-height: 16px;
 }
 .nights, .tourists {
     width: 101px;
@@ -637,4 +641,4 @@ footer .container {
 }
 .social-logo:not(:last-child) {
     margin-bottom: 15px;
-}   
+}
