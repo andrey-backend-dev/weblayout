@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Montserrat';
-    src: url('montserrat-bold-webfont.woff2') format('woff2'),
-         url('montserrat-bold-webfont.woff') format('woff');
-    font-weight: 700;
+    src: url('../fonts/montserrat-bold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-bold-webfont.woff') format('woff');
+    font-weight: bold;
     font-style: normal;
 
 }
@@ -12,8 +12,8 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('montserrat-extrabold-webfont.woff2') format('woff2'),
-         url('montserrat-extrabold-webfont.woff') format('woff');
+    src: url('../fonts/montserrat-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-extrabold-webfont.woff') format('woff');
     font-weight: 800;
     font-style: normal;
 
@@ -24,8 +24,8 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('montserrat-medium-webfont.woff2') format('woff2'),
-         url('montserrat-medium-webfont.woff') format('woff');
+    src: url('../fonts/montserrat-medium-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-medium-webfont.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 
@@ -36,8 +36,8 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('montserrat-regular-webfont.woff2') format('woff2'),
-         url('montserrat-regular-webfont.woff') format('woff');
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -48,8 +48,8 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('montserrat-semibold-webfont.woff2') format('woff2'),
-         url('montserrat-semibold-webfont.woff') format('woff');
+    src: url('../fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-semibold-webfont.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 
@@ -71,22 +71,34 @@
 
 .questions__title:focus {
     outline: none;
-    border-color: var(--button-background);
-    color: var(--button-background)
+}
+
+.questions__item:hover,
+.questions__item:hover + .questions__item {
+    border-top: 1px solid var(--button-background);
+}
+
+.questions__item:last-child:hover {
+    border-top: 1px solid var(--button-background);
+    border-bottom: 1px solid var(--button-background);
 }
 
 body {
-    max-width: 1920px;
     font-family: 'Montserrat';
     font-weight: normal;
     color: var(--text-color);
 }
 
-ul, summary {
+button {
+    background: none;
+    border: none;
+}
+
+ul, summary, li {
     list-style: none;
 }
 
-ul {
+ul, button {
     padding: 0;
 }
 
@@ -103,11 +115,13 @@ h1, h2, h3, ul, p, summary {
     line-height: 32px;
 }
 
-section:not(:first-child) {
-    margin-bottom: 100px;
+section {
+    margin-bottom: 103px;
 }
 
 .header {
+    width: 100%;
+    height: 101px;
     box-shadow: 0px 5px 40px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -147,17 +161,21 @@ section:not(:first-child) {
     margin-bottom: 90px;
 }
 
-.logotypes {
+.logotype__list {
     display: flex;   
+    width: 230px;
+    justify-content: space-between;
 }
 .form {
     display:flex;
     margin-right: 236px;
     flex-direction: column;
 }
+
 .form > :nth-child(-n+4) {
     margin-bottom: 25px;
 }
+
 
 .form__button-w-checkbox {
     display: flex;
@@ -170,12 +188,9 @@ section:not(:first-child) {
     height: 60px;
     width: 570px;
 }
-.message {
-    height: 150px;
-}
 .footer__ending {
-    max-width: 320px;
-    max-height: 363px;
+    max-height: 320px;
+    max-width: 363px;
     padding-top: 87px;
     font-size: 16px;
     line-height: 32px;
@@ -190,7 +205,7 @@ section:not(:first-child) {
     position: relative;
     height: 620px;
     margin-bottom: 100px;
-    padding: 100px 80px;
+    padding: 104px 80.5px;
 }
 .hero-section__united::before {
     content: '';
@@ -200,26 +215,26 @@ section:not(:first-child) {
     background: #000 url('../img/low-angle-photo-of-balconies-2462015\ 1.jpg') no-repeat 100%;
     left: 0;
     right: 0;
-    top: 0;
-    bottom: 0;
+    top: -1px;
+    bottom:0;
     z-index: -1;
 }
 .hero-section__heading {
     max-width: 837px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     font-weight: 800;
     font-size: 70px;
     line-height: 85.33px;
 }
 .hero-section__description {
     max-width: 790px;
-    margin-bottom: 114.83px;
+    margin-bottom: 114px;
     font-weight: 700;
     font-size: 24px;
     line-height: 29.26px;
 }
 .button {
-    padding: 24.83px 36.88px;
+    padding: 27px 37.5px;
     background-color: var(--button-background);
     font-weight: 700;
     font-size: 23.46px;
@@ -228,7 +243,6 @@ section:not(:first-child) {
     color: #FFF;
 }
 .hero-section__button {
-    height: 78px;
     font-weight: 700;
     font-size: 23.46px;
     line-height: 28.6px;
@@ -242,7 +256,7 @@ section:not(:first-child) {
 
 .about-section__description {
     max-width: 1235px;
-    margin-bottom: 50px;
+    margin-bottom: 47px;
 }
 
 .heading.how-section__heading {
@@ -259,7 +273,7 @@ section:not(:first-child) {
 }
 
 .heading.faq-section__heading {
-    margin-bottom: 32px;
+    margin-bottom: 41px;
 }
 
 .nav__list {
@@ -278,21 +292,20 @@ section:not(:first-child) {
     flex-direction: column;
 }
 
-.logotype:not(:last-child) {
-    margin-right: 25px;
-}
-
 .heading.form__heading {
+    margin-bottom: 21px;
+    padding-top: 4px;
     color: var(--additional-color)
 }
 
 .form__input {
-    padding-left: 24px;
+    padding-left: 22px;
+    padding-top: 4px;
 }
 
 .form__button {
-    width: 269px;
-    height: 58px;
+    width: 271px;
+    height: 60px;
     padding: 19px 0;
     font-size: 16px;
     line-height: 20px;
@@ -321,19 +334,9 @@ section:not(:first-child) {
     position: relative;
 }
 
-.how-section__more-button {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
-.how-section__contract-button {
-    position: absolute;
-    left: 207px;
-    bottom: 0;
-}
-.nav__item:not(:last-child) {
+.nav__item {
     height: 22px;
-    margin-right: 85px;
+    margin-right: 85.5px;
 }
 
 .main-card {
@@ -368,72 +371,49 @@ section:not(:first-child) {
 }
 
 .step-list__step {
+    font-size: 18px;
+    line-height: 22px;
     margin-right: 86px;
 }
 
-.second-step {
+.second-step, .third-step, .fourth-step {
     display: none;
 }
 
-.third-step {
-    display: none;
+.first-step .step-description__item__image-part {
+    background: transparent url('../img/Rectangle\ 18.jpg') no-repeat center center;
 }
 
-.fourth-step {
-    display: none;
-}
-.first-step::before {
-    content: '';
-    position:absolute;
-    width: 870px;
-    height: 460px;
-    left: 900px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: transparent url('../img/Rectangle\ 18.jpg') no-repeat 100%;
+.second-step .step-description__item__image-part {
+    background: transparent url('../img/Rectangle\ 18\ \(1\).jpg') no-repeat;
 }
 
-.second-step::before {
-    content: '';
-    position:absolute;
-    width: 870px;
-    height: 460px;
-    left: 900px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: transparent url('../img/Rectangle\ 18\ \(1\).jpg') no-repeat 100%;
+.third-step .step-description__item__image-part {
+    background: transparent url('../img/Rectangle\ 19.jpg') no-repeat;
 }
 
-.third-step::before {
-    content: '';
-    position:absolute;
-    width: 870px;
-    height: 460px;
-    left: 900px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: transparent url('../img/Rectangle\ 19.jpg') no-repeat 100%;
+.fourth-step .step-description__item__image-part {
+    background: transparent url('../img/Rectangle\ 20.jpg') no-repeat;
 }
 
-.fourth-step::before {
-    content: '';
-    position:absolute;
-    width: 870px;
+.step-description__item__image-part {
     height: 460px;
-    left: 900px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: transparent url('../img/Rectangle\ 20.jpg') no-repeat 100%;
+    vertical-align: bottom;
+    background-size: contain;
 }
 
 .questions__item {
     border-top: 1px solid var(--additional-color);
+}
+
+.questions__item:last-child {
     border-bottom: 1px solid var(--additional-color);
 }
+
+.slash_grey {
+    color: var(--additional-color);
+}
+
 .nav__link {
     font-weight: 600;
     font-size: 18px;
@@ -444,6 +424,10 @@ section:not(:first-child) {
 .footer__nav__item .nav__link {
     color: var(--additional-color);
     line-height: 36px;
+}
+
+.faq-section {
+    margin-bottom: 100px;
 }
 
 .main-card__description {
@@ -460,15 +444,24 @@ section:not(:first-child) {
     background-color: transparent;
 }
 
-.main-card__button, .how-section__more-button, .how-section__contract-button{
+.how-section__more-button {
+    margin-right: 28px;
+}
+
+.main-card__button, .how-section__more-button, .how-section__contract-button {
+    display: inline-block;
     width: 175px;
     height: 60px;
-    padding: 20px 0;
+    padding: 20px 0 20px 0;
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
 }
 
+.how-section__contract-button {
+    width: 147px;
+    padding: 19px 0 21px 1px;
+}
 .how-section__contract-button {
     border: 1px solid var(--text-color);
     background-color: transparent;
@@ -487,6 +480,7 @@ section:not(:first-child) {
     margin-bottom: 32px;
 }
 .step__button {
+    padding: 0;
     background-color: transparent;  
     border: none;
     cursor: pointer;
@@ -504,9 +498,26 @@ section:not(:first-child) {
 .step-description__heading {
     line-height: 32px;
 }
+
+.first-step .step-description__description {
+    margin-bottom: 48px;
+}
+
+.step-description__item {
+    width: 1770px;
+}
+
+.step-description__item__text-part, .step-description__item__image-part {
+    display: inline-block;
+    width: calc(50% - 3px);
+}
+
+.step-description__item__text-part {
+    vertical-align: top;
+}
+
 .step-description__description {
     width: 758px;
-    padding-bottom: 70px;
 }
 
 .first-card__circle {
@@ -547,10 +558,16 @@ section:not(:first-child) {
     margin-bottom: 40px;
 }
 .questions__title {
-    padding: 40px 0 40px;
+    padding: 41px 0 37px;
     background: transparent url('../img/+х.svg') no-repeat center right;
     background-size: 50px 50px;
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
+}
+
+.message {
+    height: 150px;
+    margin-bottom: 32.4px !important;
+    padding-top: 22px;
 }
