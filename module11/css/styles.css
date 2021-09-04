@@ -73,6 +73,11 @@
     outline: none;
 }
 
+.questions__item:focus,
+.questions__item:focus + .questions__item {
+    border-top: 1px solid var(--button-background);
+}
+
 .questions__item:hover,
 .questions__item:hover + .questions__item {
     border-top: 1px solid var(--button-background);
@@ -301,6 +306,7 @@ section {
 .form__input {
     padding-left: 22px;
     padding-top: 4px;
+    background-color: #414141;
 }
 
 .form__button {
@@ -381,25 +387,19 @@ section {
 }
 
 .first-step .step-description__item__image-part {
-    background: transparent url('../img/Rectangle\ 18.jpg') no-repeat center center;
+    background-image:url('../img/Rectangle\ 18.jpg');
 }
 
 .second-step .step-description__item__image-part {
-    background: transparent url('../img/Rectangle\ 18\ \(1\).jpg') no-repeat;
+    background-image:url('../img/Rectangle\ 18\ \(1\).jpg');
 }
 
 .third-step .step-description__item__image-part {
-    background: transparent url('../img/Rectangle\ 19.jpg') no-repeat;
+    background-image:url('../img/Rectangle\ 19.jpg');
 }
 
 .fourth-step .step-description__item__image-part {
-    background: transparent url('../img/Rectangle\ 20.jpg') no-repeat;
-}
-
-.step-description__item__image-part {
-    height: 460px;
-    vertical-align: bottom;
-    background-size: contain;
+    background-image:url('../img/Rectangle\ 20.jpg');
 }
 
 .questions__item {
@@ -509,10 +509,17 @@ section {
 
 .step-description__item__text-part, .step-description__item__image-part {
     display: inline-block;
-    width: calc(50% - 3px);
+}
+
+.step-description__item__image-part {
+    height: 460px;
+    width: calc(50% - 15px);
+    vertical-align: bottom;
+    background-size: cover;
 }
 
 .step-description__item__text-part {
+    width: calc(50% + 15px);
     vertical-align: top;
 }
 
