@@ -1,0 +1,580 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-bold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-extrabold-webfont.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-medium-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-semibold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+:root {
+    --button-background: #FF9900;
+    --text-color: #333333;
+    --additional-color: #CACACA;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:focus {
+    outline: 2px solid var(--button-background);
+}
+
+.questions__title:focus {
+    outline: none;
+}
+
+.questions__item:focus,
+.questions__item:focus + .questions__item {
+    border-top: 1px solid var(--button-background);
+}
+
+.questions__item:hover,
+.questions__item:hover + .questions__item {
+    border-top: 1px solid var(--button-background);
+}
+
+.questions__item:last-child:hover {
+    border-top: 1px solid var(--button-background);
+    border-bottom: 1px solid var(--button-background);
+}
+
+body {
+    font-family: 'Montserrat';
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+ul, summary, li {
+    list-style: none;
+}
+
+ul, button {
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, ul, p, summary {
+    margin: 0;
+}
+
+.paragraph {
+    font-size: 16px;
+    line-height: 32px;
+}
+
+section {
+    margin-bottom: 103px;
+}
+
+.header {
+    width: 100%;
+    height: 101px;
+    box-shadow: 0px 5px 40px 0 rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background-color: #222222;
+}
+
+.footer__left-part {
+    margin-right: 350px;
+}
+
+.container {
+    max-width: 1770px;
+    margin: 0 auto;
+}
+
+.hero-section {
+    color: #FFF;
+}
+
+.header__menu {
+    display: flex;    
+    padding: 14px 0 7px 0.28px;
+}
+
+.logo-link {
+    display: inline-block;
+    margin-right: auto;
+    height: 72px;
+}
+
+.footer__logo-link {
+    margin-bottom: 20px;
+}
+
+.footer__nav {
+    margin-bottom: 90px;
+}
+
+.logotype__list {
+    display: flex;   
+    width: 230px;
+    justify-content: space-between;
+}
+.form {
+    display:flex;
+    margin-right: 236px;
+    flex-direction: column;
+}
+
+.form > :nth-child(-n+4) {
+    margin-bottom: 25px;
+}
+
+
+.form__button-w-checkbox {
+    display: flex;
+    width: 570px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email, .name, .message{ 
+    height: 60px;
+    width: 570px;
+}
+.footer__ending {
+    max-height: 320px;
+    max-width: 363px;
+    padding-top: 87px;
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--additional-color)
+}
+.menu__nav {
+    display:inline-block;
+    padding: 25px 0;
+}
+
+.hero-section__united {
+    position: relative;
+    height: 620px;
+    margin-bottom: 100px;
+    padding: 104px 80.5px;
+}
+.hero-section__united::before {
+    content: '';
+    position: absolute;
+    width: 1770px;
+    height: 620px;
+    background: #000 url('../img/low-angle-photo-of-balconies-2462015\ 1.jpg') no-repeat 100%;
+    left: 0;
+    right: 0;
+    top: -1px;
+    bottom:0;
+    z-index: -1;
+}
+.hero-section__heading {
+    max-width: 837px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 85.33px;
+}
+.hero-section__description {
+    max-width: 790px;
+    margin-bottom: 114px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29.26px;
+}
+.button {
+    padding: 27px 37.5px;
+    background-color: var(--button-background);
+    font-weight: 700;
+    font-size: 23.46px;
+    line-height: 28.6px;
+    text-align: center;
+    color: #FFF;
+}
+.hero-section__button {
+    font-weight: 700;
+    font-size: 23.46px;
+    line-height: 28.6px;
+}
+.heading {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 48px; 
+    line-height: 58.51px;
+}
+
+.about-section__description {
+    max-width: 1235px;
+    margin-bottom: 47px;
+}
+
+.heading.how-section__heading {
+    margin-bottom: 50px;
+}
+
+.how-section__steps {
+    margin-bottom: 45px;
+}
+
+.how-section__step-description {
+    position: relative;
+    min-height: 460px;
+}
+
+.heading.faq-section__heading {
+    margin-bottom: 41px;
+}
+
+.nav__list {
+    display: flex;
+}
+
+.footer__nav__list {
+    flex-direction: column;
+}
+
+.footer__items {
+    display: flex;
+    height: 594px;
+    padding: 50px 0;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.heading.form__heading {
+    margin-bottom: 21px;
+    padding-top: 4px;
+    color: var(--additional-color)
+}
+
+.form__input {
+    padding-left: 22px;
+    padding-top: 4px;
+    background-color: #414141;
+}
+
+.form__button {
+    width: 271px;
+    height: 60px;
+    padding: 19px 0;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.consent__checkbox {
+    margin-right: 4px;
+}
+
+.consent__checkbox-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    color: var(--additional-color)
+}
+
+.cards__list {
+    display: flex;
+}
+
+.steps__step-list {
+    display: flex;
+}
+
+.step-description__list > *{
+    position: relative;
+}
+
+.nav__item {
+    height: 22px;
+    margin-right: 85.5px;
+}
+
+.main-card {
+    position: relative;
+    width: 868px;
+    height: 622px;
+    margin-right: 32px;
+    padding-top: 476px;
+    padding-left: 50px;
+    background: transparent url('../img/Rectangle\ 2.jpg') no-repeat;
+    background-size: cover;
+    color: #FFF;
+}
+
+.main-card::before {
+    content: '';
+    position: absolute;
+    width: 868px;
+    top: 426px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.cards__item {
+    display: flex;
+}
+
+.other-cards {
+    flex-direction: column;
+}
+
+.step-list__step {
+    font-size: 18px;
+    line-height: 22px;
+    margin-right: 86px;
+}
+
+.second-step, .third-step, .fourth-step {
+    display: none;
+}
+
+.first-step .step-description__item__image-part {
+    background-image:url('../img/Rectangle\ 18.jpg');
+}
+
+.second-step .step-description__item__image-part {
+    background-image:url('../img/Rectangle\ 18\ \(1\).jpg');
+}
+
+.third-step .step-description__item__image-part {
+    background-image:url('../img/Rectangle\ 19.jpg');
+}
+
+.fourth-step .step-description__item__image-part {
+    background-image:url('../img/Rectangle\ 20.jpg');
+}
+
+.questions__item {
+    border-top: 1px solid var(--additional-color);
+}
+
+.questions__item:last-child {
+    border-bottom: 1px solid var(--additional-color);
+}
+
+.slash_grey {
+    color: var(--additional-color);
+}
+
+.nav__link {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--text-color);
+}
+
+.footer__nav__item .nav__link {
+    color: var(--additional-color);
+    line-height: 36px;
+}
+
+.faq-section {
+    margin-bottom: 100px;
+}
+
+.main-card__description {
+    z-index: 1;
+    max-width: 454px;
+    margin-right: 139px;
+    font-weight: 700;
+}
+
+.main-card__button {
+    z-index: 1;
+    margin-top: 18px;
+    border: 3px solid var(--button-background);
+    background-color: transparent;
+}
+
+.how-section__more-button {
+    margin-right: 28px;
+}
+
+.main-card__button, .how-section__more-button, .how-section__contract-button {
+    display: inline-block;
+    width: 175px;
+    height: 60px;
+    padding: 20px 0 20px 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.how-section__contract-button {
+    width: 147px;
+    padding: 19px 0 21px 1px;
+}
+.how-section__contract-button {
+    border: 1px solid var(--text-color);
+    background-color: transparent;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+.other-cards > * {
+    position: relative;
+    width: 870px;
+    min-height: 295px;
+    padding: 65px 0 0 300px;
+    border: 1px solid var(--additional-color);
+}
+.other-cards__first-card {
+    margin-bottom: 32px;
+}
+.step__button {
+    padding: 0;
+    background-color: transparent;  
+    border: none;
+    cursor: pointer;
+}
+.step__button:focus {
+    color: orange;
+}
+
+.subtitle {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+.step-description__heading {
+    line-height: 32px;
+}
+
+.first-step .step-description__description {
+    margin-bottom: 48px;
+}
+
+.step-description__item {
+    width: 1770px;
+}
+
+.step-description__item__text-part, .step-description__item__image-part {
+    display: inline-block;
+}
+
+.step-description__item__image-part {
+    height: 460px;
+    width: calc(50% - 15px);
+    vertical-align: bottom;
+    background-size: cover;
+}
+
+.step-description__item__text-part {
+    width: calc(50% + 15px);
+    vertical-align: top;
+}
+
+.step-description__description {
+    width: 758px;
+}
+
+.first-card__circle {
+    position: absolute;
+    top: 110px;
+    left: 60px;
+}
+
+.first-card__package {
+    position: absolute;
+    top: 65px;
+    left: 131px;
+}
+
+.first-card__description, .second-card__description {
+    max-width: 450px;
+}
+
+.second-card__circle {
+    position: absolute;
+    top: 102px;
+    left: 60px;
+}
+
+.second-card__stroke {
+    position: absolute;
+    top: 65px;
+    left: 114.61px;
+}
+
+.second-card__stroke-circle {
+    position: absolute;
+    top: 112.9px;
+    left: 162.52px;
+}
+
+.details__description {
+    margin-bottom: 40px;
+}
+.questions__title {
+    padding: 41px 0 37px;
+    background: transparent url('../img/+х.svg') no-repeat center right;
+    background-size: 50px 50px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.message {
+    height: 150px;
+    margin-bottom: 32.4px !important;
+    padding-top: 22px;
+}
