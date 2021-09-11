@@ -55,6 +55,19 @@
 
 }
 
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: var(--additional-color)
+ }
+ :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: var(--additional-color)
+ }
+ ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: var(--additional-color)
+ }
+ :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: var(--additional-color)
+ }
+
 :root {
     --button-background: #FF9900;
     --text-color: #333333;
@@ -94,6 +107,15 @@ body {
     color: var(--text-color);
 }
 
+.main-card__background-image_320px {
+    display: none;
+    width: 100%;
+    min-height: 200px;
+    background: transparent url("../img/Rectangle\ 2.jpg") no-repeat;
+    background-size: cover;
+    margin-bottom: 8px;
+}
+
 button {
     background: none;
     border: none;
@@ -126,7 +148,7 @@ section {
 
 .header {
     width: 100%;
-    height: 101px;
+    height: 100px;
     box-shadow: 0px 5px 40px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -139,8 +161,10 @@ section {
 }
 
 .container {
-    max-width: 1770px;
+    max-width: 1800px;
+    height: inherit;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .hero-section {
@@ -148,14 +172,20 @@ section {
 }
 
 .header__menu {
-    display: flex;    
-    padding: 14px 0 7px 0.28px;
+    display: flex;
+    height: inherit;
+    align-items: center; 
+    padding: 14px 0 14px 0.28px;
 }
 
 .logo-link {
     display: inline-block;
     margin-right: auto;
     height: 72px;
+}
+
+.burger {
+    display: none;
 }
 
 .footer__logo-link {
@@ -209,15 +239,15 @@ section {
 .hero-section__united {
     position: relative;
     height: 620px;
-    margin-bottom: 100px;
     padding: 104px 80.5px;
 }
 .hero-section__united::before {
     content: '';
     position: absolute;
-    width: 1770px;
+    width: 100%;
     height: 620px;
-    background: #000 url('../img/low-angle-photo-of-balconies-2462015\ 1.jpg') no-repeat 100%;
+    background: #000 url('../img/low-angle-photo-of-balconies-2462015\ 1.jpg') no-repeat;
+    background-size: cover;
     left: 0;
     right: 0;
     top: -1px;
@@ -233,7 +263,7 @@ section {
 }
 .hero-section__description {
     max-width: 790px;
-    margin-bottom: 114px;
+    margin-bottom: 90px;
     font-weight: 700;
     font-size: 24px;
     line-height: 29.26px;
@@ -248,6 +278,7 @@ section {
     color: #FFF;
 }
 .hero-section__button {
+    display: inline-block;
     font-weight: 700;
     font-size: 23.46px;
     line-height: 28.6px;
@@ -307,6 +338,7 @@ section {
     padding-left: 22px;
     padding-top: 4px;
     background-color: #414141;
+    color: var(--additional-color);
 }
 
 .form__button {
@@ -348,11 +380,9 @@ section {
 .main-card {
     position: relative;
     width: 868px;
-    height: 622px;
     margin-right: 32px;
-    padding-top: 476px;
-    padding-left: 50px;
-    background: transparent url('../img/Rectangle\ 2.jpg') no-repeat;
+    padding: 476px 50px 50px 50px;
+    background: transparent url('../img/Rectangle\ 2.jpg') no-repeat 50%;
     background-size: cover;
     color: #FFF;
 }
@@ -360,7 +390,7 @@ section {
 .main-card::before {
     content: '';
     position: absolute;
-    width: 868px;
+    width: inherit;
     top: 426px;
     right: 0;
     bottom: 0;
@@ -370,6 +400,7 @@ section {
 
 .cards__item {
     display: flex;
+    width: 870px;
 }
 
 .other-cards {
@@ -380,6 +411,10 @@ section {
     font-size: 18px;
     line-height: 22px;
     margin-right: 86px;
+}
+
+.step-description__item {
+    display: flex;
 }
 
 .second-step, .third-step, .fourth-step {
@@ -433,7 +468,7 @@ section {
 .main-card__description {
     z-index: 1;
     max-width: 454px;
-    margin-right: 139px;
+    margin-right: auto;
     font-weight: 700;
 }
 
@@ -471,10 +506,9 @@ section {
 
 .other-cards > * {
     position: relative;
-    width: 870px;
     min-height: 295px;
     padding: 65px 0 0 300px;
-    border: 1px solid var(--additional-color);
+    outline: 1px solid var(--additional-color);
 }
 .other-cards__first-card {
     margin-bottom: 32px;
@@ -503,10 +537,6 @@ section {
     margin-bottom: 48px;
 }
 
-.step-description__item {
-    width: 1770px;
-}
-
 .step-description__item__text-part, .step-description__item__image-part {
     display: inline-block;
 }
@@ -516,6 +546,7 @@ section {
     width: calc(50% - 15px);
     vertical-align: bottom;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .step-description__item__text-part {
@@ -564,10 +595,14 @@ section {
 .details__description {
     margin-bottom: 40px;
 }
-.questions__title {
-    padding: 41px 0 37px;
+
+.questions__details {
     background: transparent url('../img/+х.svg') no-repeat center right;
     background-size: 50px 50px;
+}
+
+.questions__title {
+    padding: 41px 0 37px;
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
@@ -578,3 +613,304 @@ section {
     margin-bottom: 32.4px !important;
     padding-top: 22px;
 }
+
+@media (max-width: 1366px) {
+    * {
+        max-width: none;
+    }
+}
+
+@media (max-width: 1024px){
+    section {
+        margin-bottom: 80px;
+    }
+    .nav__list {
+        display: none;
+    }
+    .container {
+        padding: 0 50px;
+    }
+    .burger { 
+        display: inline-block;
+        margin-right: auto;
+    }
+    .header__menu .logo-image, .header__menu .logo-link {
+        width: 150px;
+        height: 48px;
+    }
+    .hero-section__united {
+        padding: 160px 77px 0 77px;
+    }
+    .hero-section__heading {
+        font-size: 60px;
+        line-height: 73.14px;
+        margin-bottom: 16px;
+    }
+    .hero-section__description {
+        font-size: 20px;
+        line-height: 24.38px;
+        margin-bottom: 60px;
+    }
+    .hero-section__united::before {
+        background: #000 url("../img/1024header.jpg") no-repeat;
+        background-size: cover;
+    }
+    .cards__list {
+        flex-direction: column;
+    }
+    .main-card {
+        margin-bottom: 32px;
+    }
+    .step-description__description {
+        max-width: 437px;
+        margin-bottom: 25px !important; 
+    }
+    .step-description__item__image-part {
+        height: 689px;
+        background-image: url("../img/Rectangle\ 181024.jpg") !important;
+    }
+    .questions__title {
+        max-width: 756px;
+        font-size: 20px;
+    }
+    .footer__ending {
+        display: none;
+    }
+    .footer__left-part {
+        margin-right: 133px;
+    }
+}
+
+@media (max-width: 768px){
+    .header {
+        height: 69px;
+    }
+    .hero-section__united {
+        padding: 160px 40px 0 40px;
+    }
+    .hero-section__heading {
+        font-size: 50px;
+        line-height: 60.95px;
+    }
+    .hero-section__description {
+        font-size: 18px;
+        line-height: 21.94px;
+    }
+    .cards__item {
+        width: 100%;
+    }
+    .main-card {
+        padding: 488px 40px 34px 40px;
+    }
+    .first-card__circle {
+        width: 72px;
+        height: 72px;
+        top: 95px;
+        left: 40px;
+    }
+    .other-cards > * {
+        min-height: 235px;
+        padding: 35px 46px 35px 170px;
+    }
+    .first-card__package {
+        width: 71.4px;
+        height: 79.2px;
+        top: 68px;
+        left: 82.6px;
+    }
+    .second-card__circle {
+        width:76.8px;
+        height: 76.8px;
+        top: 90.2px;
+        left: 40px;
+    }
+    .second-card__stroke {
+        width: 81.12px;
+        height: 81.12px;
+        top: 68px;
+        left: 72.77px;
+    }
+    .second-card__stroke-circle {
+        width: 22.99px;
+        height: 22.99px;
+        top: 96.74px;
+        left: 101.51px;
+    }
+    .step-description__item {
+        flex-direction: column-reverse;
+    }
+    .main-card__description {
+        max-width: 366px;
+    }
+    .step-description__description {
+        max-width: none;
+        width: 100%;
+        margin-bottom: 25px !important; 
+    }
+    .step-description__item__image-part {
+        height: 284px;
+        width: 100%;
+        background-image: url("../img/Rectangle\ 18.jpg") !important;
+        margin-bottom: 38px;
+    }
+    .step-description__item__text-part {
+        width: 100%;
+    }
+    .questions__title {
+        max-width: 570px;
+    }
+    .footer__items {
+        height: auto; 
+        flex-direction: column-reverse;
+    }
+    .form {
+        margin-bottom: 50px;
+    }
+    .footer__nav {
+        display: none;
+    }
+}
+@media (max-width: 320px) {
+    section {
+        margin-bottom: 60px;
+    }
+    .heading {
+        font-size: 24px;
+        line-height: 29.26px;
+    }
+    .about-section__description {
+        font-size: 14px;
+        line-height: 28px;
+        margin-bottom: 8px;
+    }
+    .container {
+        padding: 0 15px;
+    }
+    .header__menu .logo-image, .header__menu .logo-link {
+        width: 110px;
+        height: 35px;
+    }
+    .hero-section__united {
+        height: 308px;
+        padding: 60px 21px 0 22px;
+        text-align: center;
+    }
+    .hero-section__heading {
+        font-size: 20px;
+        line-height: 24.38px;
+        margin-bottom: 6px;
+    }
+    .hero-section__description {
+        font-size: 12px;
+        line-height: 14.63px;
+        margin-bottom: 32px;
+    }
+    .button {
+        padding: 13px 28.25px;
+        font-size: 12px;
+        line-height: 14.63px;
+    }
+    .hero-section__united::before {
+        height: 308px;
+        background: #000 url("../img/low-angle-photo-of-balconies-2462015\ 1320.jpg") no-repeat;
+        background-size: cover;
+    }
+    .cards__item::before {
+        display: none;
+    }
+    .cards__item {
+        height: 208px;
+        flex-direction: column;
+        color: var(--text-color);
+    }
+    .main-card__background-image_320px {
+        display: block;
+    }
+    .main-card {
+        height: 191px;
+        padding: 0;
+        background: none;
+    }
+    .main-card__description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 28px;
+        margin: 0 0 8px 0;
+    }
+    .main-card__button {
+        color: var(--button-background);
+        margin: 0;
+    }
+    .other-cards > * {
+        outline: none;
+    }
+    .first-card__circle, .second-card__circle {
+        width: 43px;
+        height: 43px;
+        top: 6px;
+        left: 0;
+    }
+    .other-cards > * {
+        display: flex;
+        flex-direction: column;
+        min-height: 235px;
+        padding: 35px 46px 35px 170px;
+    }
+    .first-card__package {
+        width: 43.01px;
+        height: 47.7px;
+        top: 0px;
+        left: 21px;
+    }
+    .second-card__stroke {
+        width: 43px;
+        height: 43px;
+        top: 0px;
+        left: 21px;
+    }
+    .second-card__stroke-circle {
+        width: 12.19px;
+        height: 12.19px;
+        top: 15.02px;
+        left: 36.31px;
+    }
+    .step-description__item {
+        flex-direction: column-reverse;
+    }
+    .main-card__description {
+        max-width: 366px;
+    }
+    .step-description__description {
+        max-width: none;
+        width: 100%;
+        margin-bottom: 25px !important; 
+    }
+    .step-description__item__image-part {
+        height: 284px;
+        width: 100%;
+        background-image: url("../img/Rectangle\ 18.jpg") !important;
+        margin-bottom: 38px;
+    }
+    .step-description__item__text-part {
+        width: 100%;
+    }
+    .questions__title {
+        max-width: 570px;
+        font-size: 20px;
+    }
+    .footer__ending {
+        display: none;
+    }
+    .footer__items {
+        height: auto; 
+        flex-direction: column-reverse;
+    }
+    .form {
+        margin-bottom: 50px;
+    }
+    .footer__nav {
+        display: none;
+    }
+}
+
+
