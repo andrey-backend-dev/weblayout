@@ -387,7 +387,7 @@ section {
 .main-card::before {
     content: '';
     position: absolute;
-    width: inherit;
+    width: 100%;
     top: 426px;
     right: 0;
     bottom: 0;
@@ -483,6 +483,7 @@ section {
 
 .main-card__button, .how-section__more-button, .how-section__contract-button {
     display: inline-block;
+    min-width: 175px;
     padding: 20px 0 20px 0;
     font-size: 16px;
     font-weight: 700;
@@ -490,6 +491,7 @@ section {
 }
 
 .how-section__contract-button {
+    min-width: 147px;
     padding: 19px 0 21px 1px;
 }
 .how-section__contract-button {
@@ -594,7 +596,7 @@ section {
 }
 
 .questions__title {
-    padding: 41px 0 37px;
+    padding: 41px 50px 37px 0;
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
@@ -606,9 +608,31 @@ section {
     padding-top: 22px;
 }
 
+@media (max-width: 1800px) {
+    .footer__ending {
+        display: none;
+    }
+}
+
 @media (max-width: 1366px) {
     * {
         max-width: none;
+    }
+}
+
+@media (max-width: 1440px) {
+    .cards__list {
+        flex-direction: column;
+    }
+
+    .cards__item {
+        width: 100%
+    }
+
+    .main-card {
+        margin-right: 0;
+        padding: 496px 50px 30px 50px;
+        margin-bottom: 32px;
     }
 }
 
@@ -676,16 +700,6 @@ section {
         background-size: cover;
     }
 
-    .cards__list {
-        flex-direction: column;
-    }
-
-    .main-card {
-        margin-right: 0;
-        padding: 496px 50px 30px 50px;
-        margin-bottom: 32px;
-    }
-
     .other-cards__first-card {
         margin-bottom: 32px;
     }
@@ -710,10 +724,6 @@ section {
         padding-left: 317px;
     }
 
-    .cards__item {
-        width: 100%;
-    }
-
     .step-description__description {
         max-width: 437px;
         margin-bottom: 23px; 
@@ -735,10 +745,6 @@ section {
 
     .footer {
         height: 594px;
-    }
-
-    .footer__ending {
-        display: none;
     }
 
     .footer__left-part {
@@ -923,7 +929,7 @@ section {
     }
 
 }
-@media (max-width: 320px) {
+@media (max-width: 605px) {
 
     
     section {
@@ -1087,8 +1093,7 @@ section {
     }
 
     .questions__title {
-        max-width: 243px;
-        padding: 30px 0;
+        padding: 30px 47px 30px 0;
         font-size: 14px;
         font-weight: 500;
         line-height: 24px;
@@ -1186,6 +1191,7 @@ section {
         height: 160px;
         background-size: 290px 160px;
         margin-bottom: 16px;
+        background-size: cover
     }
 
     .hero-section {
