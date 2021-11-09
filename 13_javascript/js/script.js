@@ -55,7 +55,7 @@ questionsTitles.forEach(element => {
       element.style.cssText = 'background: url("img/+х.svg") no-repeat; transform: none;'
       })
     currentX.style.cssText = 'background: url("img/+x_hover_focus.svg") no-repeat; transform: rotate(45deg);'
-    toggleHover(event)
+    toggleHover(event )
   })
   element.addEventListener('blur', event => {
     const currentX = element.childNodes[2]
@@ -79,9 +79,41 @@ questionsTitles.forEach(element => {
 
 const burger = document.querySelector('.burger'),
       navMenu = document.querySelector('.menu__nav'),
-      navList = document.querySelector('.nav__list');
+      navList = document.querySelector('.nav__list'),
+      closeButton = document.querySelector('.close-button');
+
+let movement,
+    pos,
+    leftSize;
 
 burger.addEventListener('click', event => {
-  navMenu.classList.add('menu__nav-opened')
-  navList.classList.add('nav__list-opened')
+  leftSize = Number(window.getComputedStyle(navMenu).left.substring(0, 4))
+  pos = leftSize
+  movement = setInterval(moveMenu, 4, 'forward')
 })
+
+closeButton.addEventListener('click', event => {
+  pos = 0;
+  console.log(leftSize)
+  movement = setInterval(moveMenu, 4, 'back', leftSize)
+})
+
+function moveMenu(direction, leftSize) {
+  console.log('a')
+  if (direction === 'back') {
+    pos -= 5
+    navMenu.style.left = pos + 'px';
+    if (navMenu.style.left === leftSize + 'px')
+      clearInterval(movement);
+  } else if (direction === 'forward') {
+    pos += 5
+    navMenu.style.left = pos + 'px';
+    if (navMenu.style.left === '0px')
+      clearInterval(movement);
+  } else {
+    console.log('Error\nUndefined parameter:', direction)
+  }
+}
+
+
+

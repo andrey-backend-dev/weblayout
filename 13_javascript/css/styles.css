@@ -185,6 +185,12 @@ section {
     justify-content: space-between;
 }
 
+.swiper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 .form {
     display:flex;
     width: 570px;
@@ -294,8 +300,15 @@ section {
     position: relative;
     height: 620px;
     padding: 104px 80.5px;
+    z-index: 1;
+    pointer-events: none;
 }
-.hero-section__united::before {
+
+.swiper-box {
+  position: relative;
+}
+
+.swiper-slide::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -303,17 +316,16 @@ section {
     background-size: cover;
     left: 0;
     right: 0;
-    top: -1px;
     bottom:0;
     z-index: -1;
 }
-.hero-section__united.first::before {
+.swiper-slide.first::before {
   background: #000 url('../img/low-angle-photo-of-balconies-2462015\ 1.jpg') no-repeat;
 }
-.hero-section__united.second::before {
+.swiper-slide.second::before {
   background: #000 url('../img/brown-and-blue-glass-building-2093076\ 2.jpg') no-repeat;
 }
-.hero-section__united.third::before {
+.swiper-slide.third::before {
   background: #000 url('../img/apartment-apartment-building-architecture-building-323705\ 2.jpg') no-repeat;
 }
 .hero-section__heading {
@@ -339,12 +351,19 @@ section {
     text-align: center;
     color: #FFF;
 }
+
 .hero-section__button {
     display: inline-block;
     font-weight: 700;
     font-size: 23.46px;
     line-height: 28.6px;
+    pointer-events: initial;
 }
+
+.swiper-pagination-bullet {
+  pointer-events: initial;
+}
+
 .heading {
     margin-bottom: 20px;
     font-weight: 400;
@@ -779,6 +798,14 @@ section {
     margin-bottom: 40px;
 }
 
+.close-button {
+  display: none;
+  width: 23px;
+  height: 23px;
+  background-image: url('../img/X.svg');
+  margin-bottom: 100px;
+}
+
 .questions__title {
   display: flex !important;
   justify-content: space-between;
@@ -852,13 +879,17 @@ section {
         margin-bottom: 80px;
     }
 
-    .nav__list {
-        display: none;
+    .close-button {
+      display: block;
     }
 
-    .menu__nav-opened {
+    .menu__nav {
       position: absolute;
-      left: -50px;
+      background-color: #FFF;
+      padding: 39px 0 217px 50px;
+      left: -420px;
+      top: 0;
+      bottom: 0;
       z-index: 10;
       width: 420px;
       height: 768px;
@@ -867,13 +898,17 @@ section {
       box-shadow: 2px 2px 11px -4px rgba(34, 60, 80, 0.2);
     }
 
-    .nav__list-opened {
-      position: relative;
-      z-index: inherit;
+    .nav__list {
       display: flex;
+      height: 389px;
       flex-direction: column;
-      width: inherit;
-      height: inherit;
+      justify-content: space-between;
+    }
+
+    .nav__link {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
     }
 
     .container {
@@ -1004,6 +1039,12 @@ section {
 }
 
 @media (max-width: 768px){
+
+    .menu__nav {
+      height: 732px;
+      padding-top: 21px;
+      padding-bottom: 198px;
+    }
 
     .footer {
         height: 792px;
@@ -1144,6 +1185,20 @@ section {
 }
 @media (max-width: 605px) {
 
+    .menu__nav {
+      left: -605px;
+      width: 100%;
+      height: 378px;
+      padding: 23px 0 71px 15px;
+    }
+
+    .nav__list {
+      height: 228px;
+    }
+
+    .close-button {
+      margin-bottom: 32px;
+    }
 
     section {
         margin-bottom: 58px;
