@@ -72,6 +72,7 @@
     --button-background: #FF9900;
     --text-color: #333333;
     --additional-color: #CACACA;
+    --active-color: #E1670E;
 }
 
 * {
@@ -80,25 +81,6 @@
 
 :focus {
     outline: 2px solid var(--button-background);
-}
-
-.questions__title:focus {
-    outline: none;
-}
-
-.questions__item:focus,
-.questions__item:focus + .questions__item {
-    border-top: 1px solid var(--button-background);
-}
-
-.questions__item:hover,
-.questions__item:hover + .questions__item {
-    border-top: 1px solid var(--button-background);
-}
-
-.questions__item:last-child:hover {
-    border-top: 1px solid var(--button-background);
-    border-bottom: 1px solid var(--button-background);
 }
 
 body {
@@ -114,6 +96,15 @@ body {
     background: transparent url("../img/Rectangle\ 2.jpg") no-repeat;
     background-size: cover;
     margin-bottom: 8px;
+}
+
+.questions__title-hover-next {
+  border-top-color: var(--button-background) !important
+}
+
+.questions__title-hover-it {
+  color: var(--button-background) !important;
+  border-color: var(--button-background) !important;
 }
 
 button {
@@ -170,7 +161,7 @@ section {
 .header__menu {
     display: flex;
     height: inherit;
-    align-items: center; 
+    align-items: center;
     padding: 14px 0 14px 0.28px;
 }
 
@@ -178,10 +169,6 @@ section {
     display: inline-block;
     margin-right: auto;
     height: 72px;
-}
-
-.burger {
-    display: none;
 }
 
 .footer__logo-link {
@@ -193,15 +180,31 @@ section {
 }
 
 .logotype__list {
-    display: flex;   
+    display: flex;
     width: 230px;
     justify-content: space-between;
 }
+
+.swiper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 .form {
     display:flex;
     width: 570px;
     margin-right: 236px;
     flex-direction: column;
+}
+
+.x {
+  vertical-align: middle;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: transparent url("../img/+х.svg") no-repeat;
+  transition: transform .7s ease;
 }
 
 .form > :nth-child(-n+4) {
@@ -215,9 +218,27 @@ section {
     align-items: center;
 }
 
-.email, .name, .message{ 
+.email, .name {
     height: 60px;
 }
+
+.message {
+    height: 150px;
+}
+
+.hero-section__button:hover {
+    background-color: rgba(255, 153, 0, 0,7);
+}
+
+.hero-section__button:focus {
+    background-color: rgba(255, 153, 0, 0,7);
+    outline: none;
+}
+
+.hero-section__button:active {
+    background-color: #E1670E
+}
+
 .footer__ending {
     max-width: 363px;
     padding-top: 87px;
@@ -230,23 +251,82 @@ section {
     padding: 25px 0;
 }
 
+.logotype__link {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+
+.facebook {
+  background: transparent url('../img/fb.svg') no-repeat;
+}
+
+.facebook:hover {
+  background: transparent url('../img/fb-hover.svg') no-repeat;
+}
+
+.facebook:active {
+  background: transparent url('../img/fb-active.svg') no-repeat;
+  outline: none;
+}
+
+.vk {
+  background: transparent url('../img/Vector.svg') no-repeat;
+}
+
+.vk:hover {
+  background: transparent url('../img/Vector-hover.svg') no-repeat;
+}
+
+.vk:active {
+  background: transparent url('../img/Vector-active.svg') no-repeat;
+  outline: none;
+}
+
+.instagram {
+  background: transparent url('../img/instagram.svg') no-repeat;
+}
+
+.instagram:hover {
+  background: transparent url('../img/instagram-hover.svg') no-repeat;
+}
+
+.instagram:active {
+  background: transparent url('../img/instagram-active.svg') no-repeat;
+  outline: none;
+}
+
 .hero-section__united {
     position: relative;
     height: 620px;
     padding: 104px 80.5px;
+    z-index: 1;
+    pointer-events: none;
 }
-.hero-section__united::before {
+
+.swiper-box {
+  position: relative;
+}
+
+.swiper-slide::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 620px;
-    background: #000 url('../img/low-angle-photo-of-balconies-2462015\ 1.jpg') no-repeat;
     background-size: cover;
     left: 0;
     right: 0;
-    top: -1px;
     bottom:0;
     z-index: -1;
+}
+.swiper-slide.first::before {
+  background: #000 url('../img/low-angle-photo-of-balconies-2462015\ 1.jpg') no-repeat;
+}
+.swiper-slide.second::before {
+  background: #000 url('../img/brown-and-blue-glass-building-2093076\ 2.jpg') no-repeat;
+}
+.swiper-slide.third::before {
+  background: #000 url('../img/apartment-apartment-building-architecture-building-323705\ 2.jpg') no-repeat;
 }
 .hero-section__heading {
     max-width: 837px;
@@ -271,16 +351,23 @@ section {
     text-align: center;
     color: #FFF;
 }
+
 .hero-section__button {
     display: inline-block;
     font-weight: 700;
     font-size: 23.46px;
     line-height: 28.6px;
+    pointer-events: initial;
 }
+
+.swiper-pagination-bullet {
+  pointer-events: initial;
+}
+
 .heading {
     margin-bottom: 20px;
     font-weight: 400;
-    font-size: 48px; 
+    font-size: 48px;
     line-height: 58.51px;
 }
 
@@ -410,11 +497,34 @@ section {
 }
 
 .step-description__item {
-    display: flex;
+    display: none;
 }
 
-.second-step, .third-step, .fourth-step {
-    display: none;
+.active-step {
+  display: flex;
+}
+
+.active-step-button {
+  color: var(--active-color) !important;
+}
+
+.nav__link:hover {
+  border-bottom: 2px solid var(--button-background);
+}
+
+.nav__link:active {
+  color: var(--active-color);
+  border-color: var(--active-color);
+  outline: none;
+}
+
+.footer-nav__link:hover {
+  color: var(--button-background)
+}
+
+.footer-nav__link:active {
+  color: var(--active-color);
+  outline: none;
 }
 
 .first-step .step-description__item__image-part {
@@ -433,28 +543,67 @@ section {
     background-image:url('../img/Rectangle\ 20.jpg');
 }
 
+.questions__title.last {
+  border-bottom: 1px solid var(--additional-color);
+}
+
+.questions__item.last {
+  color: var(--text-color) !important;
+  border-bottom: 1px solid var(--additional-color);
+}
+
+.questions__title-hover-last {
+  color: var(--button-background) !important;
+  border-top-color: var(--button-background) !important;
+  border-bottom-color: transparent !important;
+}
+
+.burger {
+  display: none;
+  width: 30px;
+  height: 23px;
+  background-image: url('../img/Component\ 6burger.svg')
+}
+
+.burger:active {
+  background-image: url('../img/status\ =\ active-burger.svg');
+  outline: none;
+}
+
+.search__button {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('../img/search.svg')
+}
+
+.search__button:hover, .search__button:active {
+  cursor: pointer;
+  outline: none;
+  background-image: url('../img/search_hover_active.svg')
+}
+
+.ui-icon {
+  display: none;
+}
+
 .questions__item {
-    border-top: 1px solid var(--additional-color);
-}
-
-.questions__item:last-child {
-    border-bottom: 1px solid var(--additional-color);
-}
-
-.slash_grey {
-    color: var(--additional-color);
+  font-family: 'Montserrat' !important;
+  border: none;
 }
 
 .nav__link {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    color: var(--text-color);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--text-color);
 }
 
-.footer__nav__item .nav__link {
-    color: var(--additional-color);
-    line-height: 36px;
+.footer-nav__link {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
+  color: var(--additional-color);
 }
 
 .faq-section {
@@ -501,6 +650,60 @@ section {
     font-weight: 400;
 }
 
+.how-section__contract-button:hover, .how-section__contract-button:focus {
+    color: #FFF;
+    background-color: #666666;
+    border-color: #666666;
+    outline: none;
+}
+
+.how-section__contract-button:active {
+    background-color: #000;
+    border-color: #000;
+}
+
+.form__input:hover {
+    background-color:#666666;
+}
+
+.form__input:focus {
+    background-color:#666666;
+    outline: none;
+}
+
+.form__input:active {
+    background-color:#666666;
+    color: #FFF;
+}
+
+.how-section__more-button:hover, .form__button:hover {
+    background-color: #F7B045;
+    cursor: pointer;
+}
+
+.how-section__more-button:focus, .form__button:focus {
+    background-color: #F7B045;
+    outline: none;
+}
+
+.how-section__more-button:active, .form__button:active {
+    background-color: #E1670E;
+}
+
+.main-card__button:hover {
+    background-color: #FF9900;
+}
+
+.main-card__button:focus {
+    background-color: #FF9900;
+    outline: none;
+}
+
+.main-card__button:active {
+    background-color: #E1670E;
+    border-color: #E1670E;
+}
+
 .other-cards > * {
     position: relative;
     min-height: 295px;
@@ -512,12 +715,17 @@ section {
 }
 .step__button {
     padding: 0;
-    background-color: transparent;  
+    background-color: transparent;
     border: none;
     cursor: pointer;
 }
-.step__button:focus {
+.step__button:hover {
     color: orange;
+}
+
+.step__button:active {
+  color: var(--active-color);
+  outline: none;
 }
 
 .subtitle {
@@ -590,16 +798,28 @@ section {
     margin-bottom: 40px;
 }
 
-.questions__details {
-    background: transparent url('../img/+х.svg') no-repeat center right;
-    background-size: 50px 50px;
+.close-button {
+  display: none;
+  width: 23px;
+  height: 23px;
+  background-image: url('../img/X.svg');
+  margin-bottom: 100px;
 }
 
 .questions__title {
-    padding: 41px 50px 37px 0;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
+  display: flex !important;
+  justify-content: space-between;
+  font-family: 'Montserrat' !important;
+  padding: 41px 50px 37px 0 !important;
+  font-weight: 700;
+  font-size: 24px !important;
+  line-height: 32px;
+  color: var(--text-color);
+  border: none;
+  border-top: 1px solid var(--additional-color);
+  margin-top: 0 !important;
+  background: none;
+  outline: none;
 }
 
 .form__input.message {
@@ -643,7 +863,7 @@ section {
     }
 
     .main-card__button {
-        height: 58px;   
+        height: 58px;
         padding: 19px 0;
     }
 
@@ -659,15 +879,43 @@ section {
         margin-bottom: 80px;
     }
 
+    .close-button {
+      display: block;
+    }
+
+    .menu__nav {
+      position: absolute;
+      background-color: #FFF;
+      padding: 39px 0 217px 50px;
+      left: -420px;
+      top: 0;
+      bottom: 0;
+      z-index: 10;
+      width: 420px;
+      height: 768px;
+      -webkit-box-shadow: 2px 2px 11px -4px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: 2px 2px 11px -4px rgba(34, 60, 80, 0.2);
+      box-shadow: 2px 2px 11px -4px rgba(34, 60, 80, 0.2);
+    }
+
     .nav__list {
-        display: none;
+      display: flex;
+      height: 389px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .nav__link {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
     }
 
     .container {
         padding: 0 50px;
     }
 
-    .burger { 
+    .burger {
         display: inline-block;
         margin-right: auto;
     }
@@ -726,7 +974,7 @@ section {
 
     .step-description__description {
         max-width: 437px;
-        margin-bottom: 23px; 
+        margin-bottom: 23px;
     }
 
     .step-description__item__image-part {
@@ -773,7 +1021,7 @@ section {
     .how-section__steps {
         margin-bottom: 51px;
     }
-    
+
     .how-section__more-button {
         min-width: 175px;
     }
@@ -791,6 +1039,12 @@ section {
 }
 
 @media (max-width: 768px){
+
+    .menu__nav {
+      height: 732px;
+      padding-top: 21px;
+      padding-bottom: 198px;
+    }
 
     .footer {
         height: 792px;
@@ -824,7 +1078,7 @@ section {
     .how-section__contract-button {
         min-width: 147px;
     }
-    
+
     .header {
         height: 69px;
     }
@@ -931,7 +1185,21 @@ section {
 }
 @media (max-width: 605px) {
 
-    
+    .menu__nav {
+      left: -605px;
+      width: 100%;
+      height: 378px;
+      padding: 23px 0 71px 15px;
+    }
+
+    .nav__list {
+      height: 228px;
+    }
+
+    .close-button {
+      margin-bottom: 32px;
+    }
+
     section {
         margin-bottom: 58px;
     }
@@ -994,7 +1262,7 @@ section {
         font-size: 12px;
         line-height: 14.63px;
     }
-    
+
     .how-section__contract-button {
         min-width: 118px;
     }
@@ -1128,7 +1396,7 @@ section {
         height: 673px;
     }
 
-    .footer__items { 
+    .footer__items {
         padding: 41px 0 23px;
     }
 
@@ -1186,7 +1454,7 @@ section {
     .how-section__steps {
         margin-bottom: 15px;
     }
-    
+
     .step-description__item__image-part {
         height: 160px;
         background-size: 290px 160px;

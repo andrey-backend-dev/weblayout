@@ -5,7 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js" defer></script>
+    <script src="js/swiper.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" defer></script>
+    <script src="js/accordion.js" defer></script>
+    <script src="js/script.js" defer></script>
     <title>Евклид</title>
 </head>
 <body>
@@ -13,12 +22,12 @@
         <div class="container">
             <div class="header__menu">
                 <a href="#" class="burger">
-                    <img src="./img/Component 6burger.svg" alt="menu burger" class="burger-image">
                 </a>
                 <a href="#" class="logo-link">
                     <img src="./img/Logo.png" alt="logo" class="logo-image">
                 </a>
                 <nav class="menu__nav">
+                    <button class="close-button"></button>
                     <ul class="nav__list">
                         <li class="nav__item">
                             <a href="#" class="nav__link">О нас</a>
@@ -38,10 +47,6 @@
                     </ul>
                 </nav>
                 <button class="search__button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="search__image">
-                        <rect width="7.56126" height="1.89031" transform="matrix(0.713342 0.700816 -0.713342 0.700816 18.6062 17.3762)" fill="#333333"/>
-                        <path d="M20.9303 10.7726C20.9303 16.1533 16.4855 20.5452 10.9652 20.5452C5.44478 20.5452 1 16.1533 1 10.7726C1 5.39198 5.44478 1 10.9652 1C16.4855 1 20.9303 5.39198 20.9303 10.7726Z" stroke="#333333" stroke-width="2"/>
-                    </svg>                                
                 </button>
             </div>
         </div>
@@ -49,16 +54,29 @@
     <main class="main">
         <section class="hero-section">
             <div class="container">
-                <div class="hero-section__united">
+                <div class="swiper-box">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide first">
+                      </div>
+                      <div class="swiper-slide second">
+                      </div>
+                      <div class="swiper-slide third">
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                  <div class="hero-section__united">
                     <h1 class="hero-section__heading">
-                        Проектные решения любой сложности
+                      Проектные решения любой сложности
                     </h1>
                     <p class="hero-section__description">
-                        Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов
+                      Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов
                     </p>
                     <a href="#" class="button hero-section__button">
-                        Заказать расчёт
+                      Заказать расчёт
                     </a>
+                  </div>
                 </div>
             </div>
         </section>
@@ -66,7 +84,7 @@
             <div class="container">
                 <h2 class="heading about-section__heading">
                     О нас
-                </h2> 
+                </h2>
                 <p class="paragraph about-section__description">
                     Также как перспективное планирование создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса экспериментов, поражающих по своей масштабности и грандиозности. А также диаграммы связей могут быть описаны максимально подробно. Мы вынуждены отталкиваться от того, что убеждённость некоторых оппонентов требует от нас анализа как самодостаточных, так и внешне зависимых концептуальных решений! Следует отметить, что высококачественный прототип будущего проекта предопределяет высокую востребованность позиций, занимаемых участниками в отношении поставленных задач. Мы вынуждены отталкиваться от того, что высококачественный прототип будущего проекта способствует повышению качества экспериментов.
                 </p>
@@ -91,7 +109,7 @@
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M52.502 1.87485C54.6298 0.646607 57.0433 0 59.5 0C61.9567 0 64.3702 0.646607 66.498 1.87485C66.4986 1.87524 66.4993 1.87563 66.5 1.87602L112 27.8813C114.126 29.1091 115.892 30.8745 117.121 33.0004C118.349 35.1264 118.997 37.5381 119 39.9937V92.0063C118.997 94.4619 118.349 96.8736 117.121 98.9995C115.892 101.126 114.126 102.891 112 104.119L111.996 104.121L66.5 130.124C66.4996 130.124 66.4993 130.124 66.4989 130.125C64.3709 131.353 61.9571 132 59.5 132C57.0429 132 54.6291 131.353 52.5011 130.125C52.5007 130.124 52.5004 130.124 52.5 130.124L7.00386 104.121L7 104.119C4.87384 102.891 3.10786 101.126 1.87923 98.9995C0.6506 96.8736 0.00251818 94.4619 0 92.0063V39.9937C0.00251818 37.5381 0.650599 35.1264 1.87923 33.0004C3.10786 30.8745 4.87384 29.1091 7 27.8813L7.00386 27.8791L52.5 1.87602C52.5007 1.87563 52.5014 1.87524 52.502 1.87485ZM59.5 2.0004C57.3936 2.0004 55.3242 2.55499 53.5 3.60842L53.4961 3.61064L8 29.6137C7.99932 29.6141 7.99865 29.6145 7.99797 29.6148C6.17645 30.6672 4.66349 32.18 3.61077 34.0015C2.55774 35.8236 2.00225 37.8907 2 39.9953V92.0047C2.00225 94.1093 2.55774 96.1763 3.61077 97.9985C4.66343 99.8199 6.17628 101.333 7.99767 102.385C7.99844 102.385 7.99922 102.386 8 102.386L53.5 128.392C55.3242 129.445 57.3936 130 59.5 130C61.6064 130 63.6758 129.445 65.5 128.392L65.5039 128.389L111 102.386C111.001 102.386 111.002 102.385 111.002 102.385C112.824 101.333 114.337 99.8199 115.389 97.9985C116.442 96.1762 116.998 94.109 117 92.0042V39.9958C116.998 37.891 116.442 35.8238 115.389 34.0015C114.337 32.18 112.824 30.6672 111.002 29.6148C111.001 29.6145 111.001 29.6141 111 29.6137L65.5039 3.61064L65.5 3.60842C63.6758 2.55499 61.6064 2.0004 59.5 2.0004Z" fill="black"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.13282 33.4876C2.4058 33.0209 3.00963 32.8614 3.48152 33.1314L59 64.8958L114.518 33.1314C114.99 32.8614 115.594 33.0209 115.867 33.4876C116.14 33.9543 115.979 34.5516 115.507 34.8216L59.4943 66.8688C59.1885 67.0437 58.8115 67.0437 58.5057 66.8688L2.493 34.8216C2.0211 34.5516 1.85985 33.9543 2.13282 33.4876Z" fill="black"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M59 65C59.5523 65 60 65.4376 60 65.9775V130.023C60 130.562 59.5523 131 59 131C58.4477 131 58 130.562 58 130.023V65.9775C58 65.4376 58.4477 65 59 65Z" fill="black"/>
-                                </svg>   
+                                </svg>
                                 <h3 class="subtitle first-card__heading">
                                     Консультация с широким активом
                                 </h3>
@@ -110,11 +128,11 @@
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M19.6774 3.03223C10.2707 3.03223 2.64515 10.6578 2.64515 20.0645C2.64515 29.4711 10.2707 37.0968 19.6774 37.0968C29.0841 37.0968 36.7097 29.4711 36.7097 20.0645C36.7097 10.6578 29.0841 3.03223 19.6774 3.03223ZM0.516113 20.0645C0.516113 9.482 9.09492 0.903198 19.6774 0.903198C30.2599 0.903198 38.8387 9.482 38.8387 20.0645C38.8387 30.647 30.2599 39.2258 19.6774 39.2258C9.09492 39.2258 0.516113 30.647 0.516113 20.0645Z" fill="black"/>
                                 </svg>
                                 <h3 class="subtitle second-card__heading">
-                                    В своём стремлении повысить 
+                                    В своём стремлении повысить
                                 </h3>
                                 <p class="paragraph second-card__description">
-                                    Качество жизни, они забывают, что сплочённость команды профессионалов представляет собой интересный эксперимент проверки прогресса профессионального сообщества. 
-                                </p>                        
+                                    Качество жизни, они забывают, что сплочённость команды профессионалов представляет собой интересный эксперимент проверки прогресса профессионального сообщества.
+                                </p>
                             </div>
                         </li>
                     </ul>
@@ -129,22 +147,22 @@
                 <div class="how-section__steps">
                     <ul class="steps__step-list">
                         <li class="step-list__step">
-                            <button class="step__button">1 шаг</button>
+                            <button class="step__button active-step-button" data-step__num="one">1 шаг</button>
                         </li>
                         <li class="step-list__step">
-                            <button class="step__button">2 шаг</button>
+                            <button class="step__button" data-step__num="two">2 шаг</button>
                         </li>
                         <li class="step-list__step">
-                            <button class="step__button">3 шаг</button>
+                            <button class="step__button" data-step__num="three">3 шаг</button>
                         </li>
                         <li class="step-list__step">
-                            <button class="step__button">4 шаг</button>
+                            <button class="step__button" data-step__num="four">4 шаг</button>
                         </li>
                     </ul>
                 </div>
                 <div class="how-section__step-description">
                     <ul class="step-description__list">
-                        <li class="first-step step-description__item">
+                        <li class="first-step step-description__item active-step" data-tab__num="one">
                             <div class="step-description__item__text-part">
                                 <h3 class="subtitle step-description__heading">Проводим консультацию</h3>
                                 <p class="paragraph step-description__description">
@@ -153,28 +171,31 @@
                                 <a href="#" class="button how-section__more-button">Подробнее</a><a href="#" class="button how-section__contract-button">Договор</a>
                             </div><div class="step-description__item__image-part"></div>
                         </li>
-                        <li class="second-step step-description__item">
+                        <li class="second-step step-description__item" data-tab__num="two">
                             <div class="step-description__item__text-part">
                                 <h3 class="subtitle step-description__heading">Составляем смету</h3>
                                 <p class="paragraph step-description__description">
                                     Внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.
                                 </p>
+                                <a href="#" class="button how-section__more-button">Подробнее</a><a href="#" class="button how-section__contract-button">Договор</a>
                             </div><div class="step-description__item__image-part"></div>
                         </li>
-                        <li class="third-step step-description__item">
+                        <li class="third-step step-description__item" data-tab__num="three">
                             <div class="step-description__item__text-part">
                                 <h3 class="subtitle step-description__heading">Привлекаем подрядчиков</h3>
                                 <p class="paragraph step-description__description">
                                     Идейные соображения высшего порядка, а также новая модель организационной деятельности требует анализа прогресса профессионального сообщества. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнить важные задания по разработке прогресса профессионального сообщества.
                                 </p>
+                                <a href="#" class="button how-section__more-button">Подробнее</a><a href="#" class="button how-section__contract-button">Договор</a>
                             </div><div class="step-description__item__image-part"></div>
                         </li>
-                        <li class="fourth-step step-description__item">
+                        <li class="fourth-step step-description__item" data-tab__num="four">
                             <div class="step-description__item__text-part">
                                 <h3 class="subtitle step-description__heading">Инспектируем все этапы работ</h3>
                                 <p class="paragraph step-description__description">
                                     Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет.
                                 </p>
+                                <a href="#" class="button how-section__more-button">Подробнее</a><a href="#" class="button how-section__contract-button">Договор</a>
                             </div><div class="step-description__item__image-part"></div>
                         </li>
                     </ul>
@@ -187,51 +208,41 @@
                     Часто задаваемые вопросы
                 </h2>
                 <div class="faq-section__questions">
-                    <ul class="questions__list">
-                        <li class="questions__item">
-                            <details class="questions__details">
-                                <summary class="questions__title">Из чего формируется конечная стоимость проекта?</summary>
-                                <p class="details__description">
-                                    Являясь всего лишь частью общей картины, непосредственные участники технического прогресса призывают нас к новым свершениям, которые, в свою очередь, должны быть своевременно верифицированы. Но высококачественный прототип будущего проекта является качественно новой ступенью первоочередных требований. А ещё некоторые особенности внутренней политики, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. И нет сомнений, что явные признаки победы институционализации призывают нас к новым свершениям, которые, в свою очередь, должны быть указаны как претенденты на роль ключевых факторов.
-                                </p>
-                                <p class="details__description">
-                                    Приятно, граждане, наблюдать, как некоторые особенности внутренней политики могут быть призваны к ответу. Явные признаки победы институционализации набирают популярность среди определенных слоев населения, а значит, должны быть объединены в целые кластеры себе подобных. Банальные, но неопровержимые выводы, а также многие известные личности призывают нас к новым свершениям, которые, в свою очередь, должны быть представлены в исключительно положительном свете. 
-                                </p>
-                            </details>
-                        </li>
-                        <li class="questions__item">
-                            <details class="questions__details">
-                                <summary class="questions__title">У меня есть свой проект. Сможем ли мы его доработать <span class="slash_grey">/</span> реализовать?</summary>
-                                <p class="details__description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus reiciendis officiis architecto perferendis debitis sit aliquid maxime, necessitatibus veniam porro quia quam. Impedit repellat, rem corporis ipsam hic minus.
-                                </p>
-                            </details>
-                        </li>
-                        <li class="questions__item">
-                            <details class="questions__details">
-                                <summary class="questions__title">Я выбираю между разными компаниями. В чем ваше отличие?</summary>
-                                <p class="details__description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus reiciendis officiis architecto perferendis debitis sit aliquid maxime, necessitatibus veniam porro quia quam. Impedit repellat, rem corporis ipsam hic minus.
-                                </p>
-                            </details>
-                        </li>
-                        <li class="questions__item">
-                            <details class="questions__details">
-                                <summary class="questions__title">Могу ли я делегировать вам работу <span class="slash_grey">/</span> согласование с подрядчиком <span class="slash_grey">/</span> организацией?</summary>
-                                <p class="details__description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus reiciendis officiis architecto perferendis debitis sit aliquid maxime, necessitatibus veniam porro quia quam. Impedit repellat, rem corporis ipsam hic minus.
-                                </p>
-                            </details>
-                        </li>
-                        <li class="questions__item">
-                            <details class="questions__details">    
-                                <summary class="questions__title">Могу ли я вернуть деньги на каком-либо из этапов работ?</summary>
-                                <p class="details__description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus reiciendis officiis architecto perferendis debitis sit aliquid maxime, necessitatibus veniam porro quia quam. Impedit repellat, rem corporis ipsam hic minus.
-                                </p>                                
-                            </details>
-                        </li>
-                    </ul>
+                    <div class="questions__list" id="accordion">
+                      <h3 class="questions__title">Из чего формируется конечная стоимость проекта?<span class="x"></span></h3>
+                      <div class="questions__item">
+                        <p class="details__description">
+                            Являясь всего лишь частью общей картины, непосредственные участники технического прогресса призывают нас к новым свершениям, которые, в свою очередь, должны быть своевременно верифицированы. Но высококачественный прототип будущего проекта является качественно новой ступенью первоочередных требований. А ещё некоторые особенности внутренней политики, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. И нет сомнений, что явные признаки победы институционализации призывают нас к новым свершениям, которые, в свою очередь, должны быть указаны как претенденты на роль ключевых факторов.
+                        </p>
+                        <p class="details__description">
+                            Приятно, граждане, наблюдать, как некоторые особенности внутренней политики могут быть призваны к ответу. Явные признаки победы институционализации набирают популярность среди определенных слоев населения, а значит, должны быть объединены в целые кластеры себе подобных. Банальные, но неопровержимые выводы, а также многие известные личности призывают нас к новым свершениям, которые, в свою очередь, должны быть представлены в исключительно положительном свете.
+                        </p>
+                      </div>
+                      <h3 class="questions__title">У меня есть свой проект. Сможем ли мы его доработать / реализовать?<span class="x"></span></h3>
+                      <div class="questions__item">
+                        <p class="details__description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus reiciendis officiis architecto perferendis debitis sit aliquid maxime, necessitatibus veniam porro quia quam. Impedit repellat, rem corporis ipsam hic minus.
+                        </p>
+                      </div>
+                      <h3 class="questions__title">Я выбираю между разными компаниями. В чем ваше отличие?<span class="x"></span></h3>
+                      <div class="questions__item">
+                          <p class="details__description">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus reiciendis officiis architecto perferendis debitis sit aliquid maxime, necessitatibus veniam porro quia quam. Impedit repellat, rem corporis ipsam hic minus.
+                          </p>
+                      </div>
+                      <h3 class="questions__title">Могу ли я делегировать вам работу / согласование с подрядчиком / организацией?<span class="x"></span></h3>
+                      <div class="questions__item">
+                        <p class="details__description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus reiciendis officiis architecto perferendis debitis sit aliquid maxime, necessitatibus veniam porro quia quam. Impedit repellat, rem corporis ipsam hic minus.
+                        </p>
+                      </div>
+                      <h3 class="questions__title last">Могу ли я вернуть деньги на каком-либо из этапов работ?<span class="x"></span></h3>
+                      <div class="questions__item last">
+                        <p class="details__description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellendus reiciendis officiis architecto perferendis debitis sit aliquid maxime, necessitatibus veniam porro quia quam. Impedit repellat, rem corporis ipsam hic minus.
+                        </p>
+                      </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -246,50 +257,39 @@
                     <nav class="footer__nav">
                         <ul class="footer__nav__list">
                             <li class="footer__nav__item">
-                                <a href="#" class="nav__link">О нас</a>
+                                <a href="#" class="footer-nav__link">О нас</a>
                             </li>
                             <li class="footer__nav__item">
-                                <a href="#" class="nav__link">Проекты</a>
+                                <a href="#" class="footer-nav__link">Проекты</a>
                             </li>
                             <li class="footer__nav__item">
-                                <a href="#" class="nav__link">Отзывы</a>
+                                <a href="#" class="footer-nav__link">Отзывы</a>
                             </li>
                             <li class="footer__nav__item">
-                                <a href="#" class="nav__link">Договор оферты</a>
+                                <a href="#" class="footer-nav__link">Договор оферты</a>
                             </li>
                             <li class="footer__nav__item">
-                                <a href="#" class="nav__link">Договор подряда</a>
+                                <a href="#" class="footer-nav__link">Договор подряда</a>
                             </li>
                             <li class="footer__nav__item">
-                                <a href="#" class="nav__link">Конфиденциальность</a>
+                                <a href="#" class="footer-nav__link">Конфиденциальность</a>
                             </li>
                             <li class="footer__nav__item">
-                                <a href="#" class="nav__link">Партнёрское соглашение</a>
+                                <a href="#" class="footer-nav__link">Партнёрское соглашение</a>
                             </li>
                         </ul>
                     </nav>
                     <div class="logotype__list">
                         <li class="logotype__item">
-                            <a href="#" class="logotype__link">
-                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="logotype facebook">
-                                    <path d="M30 0C13.5 0 0 13.5241 0 30.1807C0 45.241 10.98 57.741 25.32 60V38.9157H17.7V30.1807H25.32V23.5241C25.32 15.9639 29.79 11.8072 36.66 11.8072C39.93 11.8072 43.3499 12.3795 43.3499 12.3795V19.8193H39.57C35.85 19.8193 34.68 22.1386 34.68 24.5181V30.1807H43.0199L41.6699 38.9157H34.68V60C41.7493 58.8791 48.1866 55.2576 52.8297 49.7893C57.4729 44.3211 60.016 37.3664 59.9999 30.1807C59.9999 13.5241 46.4999 0 30 0Z" fill="#7C7C7C"/>
-                                </svg>                                    
+                            <a href="#" class="logotype__link facebook">
                             </a>
                         </li>
                         <li class="logotype__item">
-                            <a href="#" class="logotype__link">
-                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="logotype vkontakte">
-                                    <path d="M30 0C13.432 0 0 13.4314 0 30C0 46.5686 13.432 60 30 60C46.568 60 60 46.5686 60 30C60 13.4314 46.568 0 30 0ZM45.2176 33.2446C46.6159 34.6103 48.0951 35.8957 49.3504 37.4026C49.9065 38.0692 50.4307 38.7585 50.8297 39.5337C51.3993 40.6392 50.8849 41.8515 49.8954 41.9171L43.7494 41.9159C42.162 42.0473 40.8988 41.4071 39.8339 40.3218C38.9837 39.457 38.195 38.5332 37.3762 37.6389C37.0416 37.2718 36.6893 36.9262 36.2695 36.6543C35.4316 36.1093 34.7036 36.2762 34.2236 37.1515C33.7344 38.0421 33.6227 39.0292 33.5761 40.0205C33.5092 41.4697 33.0721 41.8484 31.618 41.9165C28.5109 42.062 25.5628 41.5906 22.8227 40.0241C20.4055 38.6425 18.5346 36.6924 16.9043 34.4845C13.7297 30.1805 11.2984 25.4566 9.11386 20.597C8.6222 19.5026 8.98189 18.917 10.1893 18.8943C12.1952 18.8557 14.2011 18.8606 16.2071 18.8925C17.0234 18.9054 17.5636 19.3725 17.8772 20.1428C18.9612 22.8098 20.2901 25.3473 21.9554 27.7007C22.3992 28.3274 22.8522 28.9522 23.4973 29.3948C24.2093 29.8834 24.7519 29.7219 25.0877 28.9271C25.3025 28.4219 25.3952 27.8817 25.4418 27.3404C25.6014 25.486 25.6205 23.6323 25.3442 21.7854C25.1724 20.6296 24.5224 19.8832 23.3702 19.6647C22.7834 19.5536 22.8694 19.3363 23.1548 19.0011C23.6501 18.4217 24.1142 18.0632 25.0416 18.0632L31.9857 18.062C33.0801 18.2768 33.3256 18.7679 33.4742 19.8703L33.4803 27.5871C33.4674 28.0137 33.6945 29.2782 34.4606 29.5574C35.0744 29.76 35.4795 29.2677 35.8465 28.8792C37.5118 27.112 38.6983 25.0263 39.7608 22.8675C40.2298 21.9155 40.6343 20.9303 41.0271 19.9433C41.3193 19.2135 41.7735 18.8544 42.5972 18.8667L49.2841 18.8747C49.4811 18.8747 49.6812 18.8765 49.8764 18.9103C51.0034 19.103 51.3121 19.5879 50.9635 20.6873C50.4147 22.4145 49.3485 23.8533 48.3063 25.2958C47.1892 26.8401 45.9977 28.3304 44.8917 29.8815C43.8752 31.2994 43.9556 32.0133 45.2176 33.2446Z" fill="#7C7C7C"/>
-                                </svg>                                    
+                            <a href="#" class="logotype__link vk">
                             </a>
                         </li>
                         <li class="logotype__item">
-                            <a href="#" class="logotype__link">
-                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="logotype instagram">
-                                    <path d="M24.2578 30C24.2578 33.1714 26.8286 35.7422 30 35.7422C33.1714 35.7422 35.7422 33.1714 35.7422 30C35.7422 26.8286 33.1714 24.2578 30 24.2578C26.8286 24.2578 24.2578 26.8286 24.2578 30Z" fill="#7C7C7C"/>
-                                    <path d="M16.571 19.8403C16.8471 19.0923 17.2874 18.4153 17.8596 17.8596C18.4154 17.2874 19.0919 16.847 19.8404 16.571C20.4474 16.3352 21.3593 16.0546 23.0388 15.9781C24.8557 15.8953 25.4004 15.8774 30 15.8774C34.6001 15.8774 35.1448 15.8948 36.9612 15.9777C38.6407 16.0546 39.5531 16.3352 40.1596 16.571C40.9081 16.847 41.5851 17.2874 42.1404 17.8596C42.7126 18.4153 43.1529 19.0919 43.4294 19.8403C43.6652 20.4473 43.9458 21.3596 44.0222 23.0392C44.1051 24.8556 44.1229 25.4003 44.1229 30.0004C44.1229 34.6 44.1051 35.1447 44.0222 36.9616C43.9458 38.6411 43.6652 39.553 43.4294 40.16C43.1529 40.9084 42.713 41.585 42.1408 42.1407C41.5851 42.7129 40.9085 43.1533 40.1601 43.4293C39.5531 43.6655 38.6407 43.9461 36.9612 44.0226C35.1448 44.1054 34.6005 44.1228 30.0005 44.1228C25.3999 44.1228 24.8552 44.1054 23.0392 44.0226C21.3597 43.9461 20.4474 43.6655 19.8404 43.4293C18.338 42.8498 17.1506 41.6624 16.571 40.16C16.3353 39.553 16.0547 38.6411 15.9778 36.9616C15.8949 35.1447 15.8775 34.6 15.8775 30.0004C15.8775 25.4003 15.8949 24.8556 15.9778 23.0392C16.0542 21.3596 16.3348 20.4473 16.571 19.8403ZM30 38.8457C34.8857 38.8457 38.8463 34.8856 38.8463 29.9999C38.8463 25.1142 34.8857 21.1541 30 21.1541C25.1147 21.1541 21.1542 25.1142 21.1542 29.9999C21.1542 34.8856 25.1147 38.8457 30 38.8457ZM20.8044 22.8716C21.9461 22.8716 22.8717 21.946 22.8717 20.8044C22.8717 19.6627 21.9461 18.7371 20.8044 18.7371C19.6628 18.7371 18.7372 19.6627 18.7372 20.8044C18.7376 21.946 19.6628 22.8716 20.8044 22.8716Z" fill="#7C7C7C"/>
-                                    <path d="M30 0C46.566 0 60 13.434 60 30C60 46.566 46.566 60 30 60C13.434 60 0 46.566 0 30C0 13.434 13.434 0 30 0ZM12.8773 37.1022C12.9607 38.936 13.2523 40.188 13.678 41.2839C14.5729 43.5979 16.4021 45.4271 18.7161 46.322C19.8116 46.7477 21.064 47.0389 22.8973 47.1227C24.7343 47.2064 25.3212 47.2266 29.9995 47.2266C34.6783 47.2266 35.2647 47.2064 37.1022 47.1227C38.9355 47.0389 40.188 46.7477 41.2834 46.322C42.4333 45.8894 43.4743 45.2115 44.3349 44.3349C45.211 43.4747 45.889 42.4333 46.3216 41.2839C46.7473 40.1884 47.0389 38.936 47.1222 37.1027C47.2069 35.2652 47.2266 34.6783 47.2266 30C47.2266 25.3217 47.2069 24.7348 47.1227 22.8978C47.0393 21.064 46.7482 19.812 46.3225 18.7161C45.8899 17.5667 45.2115 16.5253 44.3349 15.6651C43.4747 14.7885 42.4333 14.1106 41.2839 13.678C40.188 13.2523 38.936 12.9611 37.1022 12.8773C35.2652 12.7936 34.6783 12.7734 30 12.7734C25.3217 12.7734 24.7348 12.7936 22.8978 12.8778C21.064 12.9611 19.812 13.2523 18.7161 13.6775C17.5667 14.1101 16.5253 14.7885 15.6647 15.6651C14.7885 16.5257 14.1101 17.5667 13.678 18.7161C13.2518 19.812 12.9607 21.064 12.8769 22.8978C12.7931 24.7348 12.7734 25.3217 12.7734 30C12.7734 34.6783 12.7931 35.2652 12.8773 37.1022Z" fill="#7C7C7C"/>
-                                </svg>                                    
+                            <a href="#" class="logotype__link instagram">
                             </a>
                         </li>
                     </div>
@@ -308,7 +308,7 @@
                     </div>
                 </form>
                 <p class="footer__ending">
-                    Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: разбавленное изрядной долей эмпатии, рациональное мышление позволяет оценить значение модели развития. Таким образом, консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании стандартных подходов. 
+                    Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: разбавленное изрядной долей эмпатии, рациональное мышление позволяет оценить значение модели развития. Таким образом, консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании стандартных подходов.
                 </p>
             </div>
         </div>
