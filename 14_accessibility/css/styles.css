@@ -73,6 +73,7 @@
     --text-color: #333333;
     --additional-color: #CACACA;
     --active-color: #E1670E;
+    --swiper-theme-color: #FFF;
 }
 
 * {
@@ -88,7 +89,15 @@
 }
 
 .swiper-pagination-bullet {
+  background-color: #FFF;
   opacity: .6;
+  pointer-events: initial;
+  width: 15px;
+  height: 15px;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
 }
 
 body {
@@ -366,10 +375,6 @@ section {
     font-size: 23.46px;
     line-height: 28.6px;
     pointer-events: initial;
-}
-
-.swiper-pagination-bullet {
-  pointer-events: initial;
 }
 
 .heading {
