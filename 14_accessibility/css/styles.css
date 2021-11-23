@@ -80,8 +80,24 @@
     box-sizing: border-box;
 }
 
-:focus-visible {
+:focus {
     outline: 2px solid var(--button-background);
+}
+
+.focus {
+  outline: 2px solid var(--button-background);
+}
+
+.swiper-pagination-bullet {
+  background-color: #FFF;
+  opacity: .6;
+  pointer-events: initial;
+  width: 15px;
+  height: 15px;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
 }
 
 body {
@@ -94,7 +110,7 @@ body {
     display: none;
     width: 100%;
     min-height: 200px;
-    background: transparent url("../img/Rectangle 2.jpg") no-repeat;
+    background: transparent url("../img/Rectangle\ 2.jpg") no-repeat;
     background-size: cover;
     margin-bottom: 8px;
 }
@@ -106,22 +122,6 @@ body {
 .questions__title-hover-it {
   color: var(--button-background) !important;
   border-color: var(--button-background) !important;
-}
-
-consent__checkbox:focus {
-  outline: 2px solid var(--button-background) !important;
-}
-
-.swiper-pagination-bullet {
-  opacity: 40%;
-  background: #FFF;
-  width: 15px;
-  height: 15px;
-  pointer-events: inherit;
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
 }
 
 button {
@@ -244,11 +244,11 @@ section {
 }
 
 .hero-section__button:hover {
-    background-color: rgba(255, 153, 0, 0.7);
+    background-color: rgba(255, 153, 0, .7);
 }
 
 .hero-section__button:focus {
-    background-color: rgba(255, 153, 0, 0.7);
+    background-color: rgba(255, 153, 0, .7);
     outline: none;
 }
 
@@ -337,13 +337,13 @@ section {
     z-index: -1;
 }
 .swiper-slide.first::before {
-  background: #000 url('../img/low-angle-photo-of-balconies-2462015 1.jpg') no-repeat;
+  background: #000 url('../img/low-angle-photo-of-balconies-2462015\ 1.jpg') no-repeat;
 }
 .swiper-slide.second::before {
-  background: #000 url('../img/brown-and-blue-glass-building-2093076 2.jpg') no-repeat;
+  background: #000 url('../img/brown-and-blue-glass-building-2093076\ 2.jpg') no-repeat;
 }
 .swiper-slide.third::before {
-  background: #000 url('../img/apartment-apartment-building-architecture-building-323705 2.jpg') no-repeat;
+  background: #000 url('../img/apartment-apartment-building-architecture-building-323705\ 2.jpg') no-repeat;
 }
 .hero-section__heading {
     max-width: 837px;
@@ -479,7 +479,7 @@ section {
     width: 868px;
     margin-right: 32px;
     padding: 476px 50px 50px 50px;
-    background: transparent url('../img/Rectangle 2.jpg') no-repeat 50%;
+    background: transparent url('../img/Rectangle\ 2.jpg') no-repeat 50%;
     background-size: cover;
     color: #FFF;
 }
@@ -541,19 +541,19 @@ section {
 }
 
 .first-step .step-description__item__image-part {
-    background-image:url('../img/Rectangle 18.jpg');
+    background-image:url('../img/Rectangle\ 18.jpg');
 }
 
 .second-step .step-description__item__image-part {
-    background-image:url('../img/Rectangle 18 (1).jpg');
+    background-image:url('../img/Rectangle\ 18\ \(1\).jpg');
 }
 
 .third-step .step-description__item__image-part {
-    background-image:url('../img/Rectangle 19.jpg');
+    background-image:url('../img/Rectangle\ 19.jpg');
 }
 
 .fourth-step .step-description__item__image-part {
-    background-image:url('../img/Rectangle 20.jpg');
+    background-image:url('../img/Rectangle\ 20.jpg');
 }
 
 .questions__title.last {
@@ -575,11 +575,11 @@ section {
   display: none;
   width: 30px;
   height: 23px;
-  background-image: url('../img/Component 6burger.svg')
+  background-image: url('../img/Component\ 6burger.svg')
 }
 
 .burger:active {
-  background-image: url('../img/status = active-burger.svg');
+  background-image: url('../img/status\ =\ active-burger.svg');
   outline: none;
 }
 
@@ -992,7 +992,7 @@ section {
 
     .step-description__item__image-part {
         height: 689px;
-        background-image: url("../img/Rectangle 181024.jpg") !important;
+        background-image: url("../img/Rectangle\ 181024.jpg") !important;
     }
 
     .questions__title {
@@ -1175,7 +1175,7 @@ section {
     .step-description__item__image-part {
         height: 284px;
         width: 100%;
-        background-image: url("../img/Rectangle 18.jpg") !important;
+        background-image: url("../img/Rectangle\ 18.jpg") !important;
         margin-bottom: 38px;
     }
 
@@ -1286,7 +1286,7 @@ section {
 
     .hero-section__united::before {
         height: 308px;
-        background: #000 url("../img/low-angle-photo-of-balconies-2462015 1320.jpg") no-repeat;
+        background: #000 url("../img/low-angle-photo-of-balconies-2462015\ 1320.jpg") no-repeat;
         background-size: cover;
     }
 
